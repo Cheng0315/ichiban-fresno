@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Menu from './containers/menu'
 
 class App extends Component {
   constructor(props) {
@@ -18,14 +18,10 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  renderPlates() {
-    return this.state.plates.map(plate => <div><div>{plate.name}</div><div>{plate.price}</div><div>{plate.description}</div></div>)
-  }
-
   render() {
     return (
       <div >
-        {this.renderPlates()}
+        <Menu allPlates={this.state.plates}/>
       </div>
     );
   }
