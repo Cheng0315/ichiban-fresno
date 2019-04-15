@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Plates from '../components/plates'
 import { connect } from 'react-redux';
 import { fetchAllPlates } from '../actions/platesAction'
+import SortBtn from '../components/sort_btn'
 
 class Menu extends Component {
 
@@ -21,11 +22,23 @@ class Menu extends Component {
       .catch(error => console.log(error))
   }
 
+  filterPlates = (e) => {
+    return function(ele) {
+      return ele.category_id === parseInt(e.target.value)
+    }
+  }
+
+  handleClick = (e) => {
+    this.setState({
+      sortedPlates: this.state.plates.filter(this.filterPlates(e))
+    })
+  }
 
   render() {
     return (
       <div>
-        <Plates sortedPlates={this.state.sortedPlates} clickk={this.handleClick}/>
+        <SortBtn handleClick={this.handleClick}/>
+        <Plates sortedPlates={this.state.sortedPlates}/>
       </div>
     )
   }
