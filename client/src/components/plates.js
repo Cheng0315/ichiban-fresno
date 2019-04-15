@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Plates extends Component {
+class Plates extends Component {
 
   render() {
     const plates = this.props.sortedPlates
@@ -10,3 +10,5 @@ export default class Plates extends Component {
     )
   }
 }
+
+export default Plates

@@ -36,7 +36,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div>
+      <div id="menu">
         <SortBtn handleClick={this.handleClick}/>
         <Plates sortedPlates={this.state.sortedPlates}/>
       </div>

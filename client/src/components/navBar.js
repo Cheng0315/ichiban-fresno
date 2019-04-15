@@ -1,0 +1,26 @@
+import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
+const NavBar = () => {
+  return (
+    <div>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="/">Ichiban-Fresno</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/#menu">Menu</Nav.Link>
+            <Nav.Link href="/#about-us">About Us</Nav.Link>
+            <Nav.Link href="/#contact-us">Contact Us</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  )
+}
+
+export default NavBar
