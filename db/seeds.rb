@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Admin.create(email: 'admin@admin.com', password: 'admin')
 
-Plate.create(name: 'California Roll', description: 'In: Crabmeat, avocado', price: 6.45, category_id: 1, admin_id: 1)
-Plate.create(name: 'Spicy Tuna', description: 'In: Spicy Tuna (raw)', price: 7.25, category_id: 2, admin_id: 1)
-Plate.create(name: 'Salmon Roll', description: 'In: Salmon (raw)', price: 7.25, category_id: 3, admin_id: 1)
-Plate.create(name: "Sunbird's Roll", description: 'In: Crabmeat, avocado (deep fried)', price: 8.25, category_id: 4, admin_id: 1)
+Plate.create(name: 'Ichiban Roll', description: 'In: Spicy Tuna (raw), Out: Deep ried', price: 9.25, category_id: 1, admin_id: 1)
+Plate.create(name: 'Spicy Tuna Tempura', description: 'In: Spicy Tuna (raw), Out: Deep ried, green onion, fish eggs', price: 8.95, category_id: 2, admin_id: 1)
+Plate.create(name: 'Chicken Teriyaki Roll', description: 'In: Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 3, admin_id: 1)
+Plate.create(name: "Beef Teriyaki Roll", description: 'In: Crabmeat, avocado, grilled beef', price: 10.95, category_id: 4, admin_id: 1)
