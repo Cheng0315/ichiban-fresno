@@ -13,8 +13,8 @@ const NavBar = () => {
           <Nav className="ml-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/#menu">Menu</Nav.Link>
-            <Nav.Link href="/#opening-hours">Opening Hours</Nav.Link>
             <Nav.Link href="/#about-us">About Us</Nav.Link>
+            <Nav.Link href="/#opening-hours">Opening Hours</Nav.Link>
             <Nav.Link href="/#contact-us">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
