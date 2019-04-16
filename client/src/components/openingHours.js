@@ -1,10 +1,10 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const OpeningHours = () => {
   return (
-    <div>
+    <div id="opening-hours">
       <h3>Opening Hours</h3>
       <Row>
         <Col>

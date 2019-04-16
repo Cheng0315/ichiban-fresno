@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div>
+    <div id="about-us">
       <h3>About Us</h3>
       <p>Welcome to Ichiban Restaurant. Whether you’re celebrating, 
         dining with business clients or 

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Plates from '../components/plates'
+import Plates from '../components/plates';
 import { connect } from 'react-redux';
-import { fetchAllPlates } from '../actions/platesAction'
-import MenuBtns from '../components/menuBtns'
+import { fetchAllPlates } from '../actions/platesAction';
+import MenuBtns from '../components/menuBtns';
 
 class Menu extends Component {
 
