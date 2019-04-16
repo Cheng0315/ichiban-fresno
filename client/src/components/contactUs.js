@@ -22,9 +22,13 @@ const ContactUs = () => {
             <div>ichibanfresno@gmail.com</div>
           </div>
         </Col>
-        
+
         <Col>
-          
+          <div>
+            <iframe width="600" height="450"
+              src={"https://www.google.com/maps/embed/v1/place?key=" + process.env.REACT_APP_GOOGLE_MAP_API_KEY + "&q=Ichiban,Fresno+CA"}>
+            </iframe>
+          </div>
         </Col>
       </Row>
     </div>
