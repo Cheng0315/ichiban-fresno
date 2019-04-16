@@ -4,7 +4,7 @@ import Menu from './containers/menu'
 import NavBar from './components/navBar'
 import CarouselComponent from './components/carousel'
 import AboutUs from './components/aboutUs'
-
+import OpeningHours from './components/openingHours'
 
 class App extends Component {
 
@@ -16,6 +16,7 @@ class App extends Component {
           <CarouselComponent/>
           <Menu/>
           <AboutUs/>
+          <OpeningHours/>
         </div>
       </React.Fragment>
     );
