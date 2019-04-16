@@ -8,6 +8,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
+        <div className="container">
         <Navbar.Brand href="/">Ichiban-Fresno</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -18,6 +19,7 @@ const NavBar = () => {
             <Nav.Link href="/#contact-us">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        </div>
       </Navbar>
     </div>
   )
