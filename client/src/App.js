@@ -3,6 +3,7 @@ import './App.css';
 import Menu from './containers/menu'
 import NavBar from './components/navBar'
 import CarouselComponent from './components/carousel'
+import AboutUs from './components/aboutUs'
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="container">
           <CarouselComponent/>
           <Menu/>
+          <AboutUs/>
         </div>
       </React.Fragment>
     );

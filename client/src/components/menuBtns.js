@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 const MenuBtns = (props) => {
   return (
     <div>
-      <Button variant="link" key='1' value='1' onClick={props.handleClick}>Ichiban Rolls & Sushi</Button>
+      <Button variant="primary" key='1' value='1' onClick={props.handleClick}>Ichiban Rolls & Sushi</Button>
       <Button variant="link" key='2' value='2' onClick={props.handleClick}>Teriyaki Bowl</Button>
       <Button variant="link" key='3' value='3' onClick={props.handleClick}>Udon</Button>
       <Button variant="link" key='4' value='4' onClick={props.handleClick}>Sushi</Button>
