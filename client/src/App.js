@@ -12,7 +12,7 @@ class App extends Component {
       <React.Fragment>
         <NavBar/>
         <div className="container">
-        <CarouselComponent/>
+          <CarouselComponent/>
           <Menu/>
         </div>
       </React.Fragment>

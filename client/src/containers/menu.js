@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Plates from '../components/plates'
 import { connect } from 'react-redux';
 import { fetchAllPlates } from '../actions/platesAction'
-import SortBtn from '../components/sort_btn'
+import MenuBtns from '../components/menuBtns'
 
 class Menu extends Component {
 
@@ -37,7 +37,7 @@ class Menu extends Component {
   render() {
     return (
       <div id="menu">
-        <SortBtn handleClick={this.handleClick}/>
+        <MenuBtns handleClick={this.handleClick}/>
         <Plates sortedPlates={this.state.sortedPlates}/>
       </div>
     )
