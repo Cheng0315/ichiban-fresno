@@ -5,20 +5,20 @@ import Col from 'react-bootstrap/Col';
 const ContactUs = () => {
   return (
     <div id="contact-us">
-      <h3 className="text-center">Contact Us</h3>
+      <h2 className="text-center">Contact Us</h2>
       <Row>
         <Col>
           <div>
-            <div>Address</div>
+            <div><strong>Address</strong></div>
             <div>4863 E Butler Ave,</div>
             <div>Fresno, CA 93727</div>
           </div>
           <div>
-            <div>Phone</div>
+            <div><strong>Phone</strong></div>
             <div>(559) 255-7615</div>
           </div>
           <div>
-            <div>Email</div>
+            <div><strong>Email</strong></div>
             <div>ichibanfresno@gmail.com</div>
           </div>
         </Col>
