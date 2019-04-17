@@ -37,7 +37,7 @@ class Menu extends Component {
   render() {
     return (
       <div id="menu">
-        <h3>Browse Our Menu</h3>
+        <h3 className="text-center">Browse Our Menu</h3>
         <MenuBtns handleClick={this.handleClick}/>
         <Plates sortedPlates={this.state.sortedPlates}/>
       </div>

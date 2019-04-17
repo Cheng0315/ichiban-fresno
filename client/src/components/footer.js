@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = () => {
   return (
     <div id="footer">
-      <h6>Copyright &copy; 2019 Ichiban, Inc. All Rights Reserved</h6>
-      <p>Developed by Cheng Vue</p>
+      <h6 className="text-center">Copyright &copy; 2019 Ichiban, Inc. All Rights Reserved</h6>
+      <p className="text-center">Developed by Cheng Vue</p>
     </div>
   )
 }

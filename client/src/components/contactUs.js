@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 const ContactUs = () => {
   return (
     <div id="contact-us">
-      <h3>Contact Us</h3>
+      <h3 className="text-center">Contact Us</h3>
       <Row>
         <Col>
           <div>
@@ -25,7 +25,7 @@ const ContactUs = () => {
 
         <Col>
           <div>
-            <iframe width="600" height="450"
+            <iframe width="100%" height="450"
               src={"https://www.google.com/maps/embed/v1/place?key=" + process.env.REACT_APP_GOOGLE_MAP_API_KEY + "&q=Ichiban,Fresno+CA"}>
             </iframe>
           </div>
