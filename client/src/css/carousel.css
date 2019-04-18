@@ -1,3 +1,16 @@
+.carousel h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+ }
+ 
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
 @media (max-width: 767px) {
   .carouselHeight {
     height: 200px;
@@ -24,6 +37,16 @@
     height: 180px;
     object-fit: contain;
   }
+
+  .carousel-img-r {
+    position: absolute;
+    right: 40px;
+  }
+  
+  .carousel-img-l {
+    position: absolute;
+    left: 40px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px){
@@ -32,14 +55,24 @@
   }
 
   .carouselHeight {
-    height: 220px;
+    height: 250px;
   }
   
   .imgHeight {
     -webkit-filter: drop-shadow(0 0 30px #333); 
     filter: drop-shadow(0 0 30px #333); 
-    height: 220px;
+    height: 250px;
     object-fit: contain;
+  }
+
+  .carousel-img-r {
+    position: absolute;
+    right: 40px;
+  }
+  
+  .carousel-img-l {
+    position: absolute;
+    left: 40px;
   }
 }
 
@@ -58,12 +91,16 @@
     height: 300px;
     object-fit: contain;
   }
+
+  .carousel-img-r {
+    position: absolute;
+    right: 40px;
+  }
+  
+  .carousel-img-l {
+    position: absolute;
+    left: 40px;
+  }
 }
 
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
- }
- 
-.carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-}
+

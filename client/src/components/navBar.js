@@ -8,7 +8,7 @@ const NavBar = () => {
     <header className="header">
       <Navbar bg="light" expand="lg" className='navbar'>
         <div className="container">
-        <Navbar.Brand className='nav-brand' href="/"><h2>Ichiban</h2></Navbar.Brand>
+        <Navbar.Brand className='nav-brand' href="/"><h2>ICHIBAN</h2></Navbar.Brand>
         <Navbar.Toggle className="custom-toggler" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
