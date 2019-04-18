@@ -1,0 +1,23 @@
+.header {
+  min-height: 74px;
+  background-color: #f8e080 !important; 
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+.navbar {
+  min-height: 70px;
+  background-color: #131313 !important; 
+}
+
+.nav-brand {
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
