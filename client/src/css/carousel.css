@@ -1,8 +1,21 @@
-.carouselHeight {
-  height: 300px;
+@media (max-width: 991px) {
+  .carouselHeight {
+    height: 200px;
+  }
+  
+  .imgHeight {
+    height: 200px;
+    object-fit: contain;
+  }
 }
 
-.imgHeight {
-  height: 300px;
-  width: 300px;
+@media (min-width: 992px) {
+  .carouselHeight {
+    height: 300px;
+  }
+  
+  .imgHeight {
+    height: 300px;
+    object-fit: contain;
+  }
 }
