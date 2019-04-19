@@ -5,5 +5,22 @@
 
 #menu {
   background-color: #f4f4f4;
-  border-radius: 5px;
+}
+
+#menu h2 {
+  padding-top: 15px;
+}
+
+.menu-inner-container {
+  padding: 0 55px 55px 55px;
+  border: 6px;
+}
+
+.btns-background-color {
+  background-color: #b2b2b2;
+}
+
+.menu-border {
+  border: 6px;
+  border-color:red;
 }

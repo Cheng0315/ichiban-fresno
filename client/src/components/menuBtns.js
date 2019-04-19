@@ -4,7 +4,7 @@ import '../css/menu.css';
 
 const MenuBtns = (props) => {
   return (
-    <div className="browse-menu">
+    <div className="browse-menu btns-background-color">
       <div className='menu-btns'>
         <Button variant="link" key='1' value='1' onClick={props.handleClick}>Ichiban Rolls & Sushi</Button>
         <Button variant="link" key='2' value='2' onClick={props.handleClick}>Teriyaki Bowl</Button>
@@ -13,9 +13,9 @@ const MenuBtns = (props) => {
         <Button variant="link" key='5' value='5' onClick={props.handleClick}>Tempura Plates</Button>
         <Button variant="link" key='6' value='6' onClick={props.handleClick}>Combination Plates</Button>
         <Button variant="link" key='7' value='7' onClick={props.handleClick}>Specials</Button>
-        <Button variant="link" key='8' value='8' onClick={props.handleClick}>Dinner Special</Button>
       </div>
       <div className='menu-btns'>
+        <Button variant="link" key='8' value='8' onClick={props.handleClick}>Dinner Special</Button>
         <Button variant="link" key='9' value='9' onClick={props.handleClick}>Side Orders</Button>
         <Button variant="link" key='10' value='10' onClick={props.handleClick}>Beverages</Button>
       </div>
