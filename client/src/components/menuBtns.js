@@ -4,7 +4,7 @@ import '../css/menu.css';
 
 const MenuBtns = (props) => {
   return (
-    <div className="browse-menu btns-background-color">
+    <div className="btns-background-color">
       <div className='menu-btns'>
         <Button variant="link" key='1' value='1' onClick={props.handleClick}>Ichiban Rolls & Sushi</Button>
         <Button variant="link" key='2' value='2' onClick={props.handleClick}>Teriyaki Bowl</Button>

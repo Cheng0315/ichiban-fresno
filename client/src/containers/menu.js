@@ -42,7 +42,9 @@ class Menu extends Component {
         <div className='menu-inner-container'>
           <div className="menu-border">
             <MenuBtns handleClick={this.handleClick}/>
-            <Plates sortedPlates={this.state.sortedPlates}/>
+            <div className='listing-items'>
+              <Plates sortedPlates={this.state.sortedPlates}/>
+            </div>
           </div>
         </div>
       </div>
