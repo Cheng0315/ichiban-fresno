@@ -17,8 +17,8 @@ class App extends Component {
         <div className="container">
           <CarouselComponent/>
           <Menu/>
-          <AboutUs/>
           <OpeningHours/>
+          <AboutUs/>
           <ContactUs/>
           <Footer/>
         </div>

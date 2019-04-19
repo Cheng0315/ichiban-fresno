@@ -14,8 +14,8 @@ const NavBar = () => {
           <Nav className="ml-auto">
             <Nav.Link className='nav-link' href="/">Home</Nav.Link>
             <Nav.Link className='nav-link' href="/#menu">Menu</Nav.Link>
-            <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
             <Nav.Link className='nav-link' href="/#opening-hours">Opening Hours</Nav.Link>
+            <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
             <Nav.Link className='nav-link' href="/#contact-us">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
