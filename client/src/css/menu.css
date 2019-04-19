@@ -1,6 +1,12 @@
 .menu-btns {
   display: flex;
   justify-content: center;
+  
+}
+
+.menu-btns button {
+  font-weight: bold;
+  color: black;
 }
 
 #menu {
@@ -8,6 +14,7 @@
 }
 
 #menu h2 {
+  color: #ff7043;
   padding-top: 15px;
 }
 
