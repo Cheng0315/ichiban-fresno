@@ -4,8 +4,7 @@ import '../css/carousel.css';
 
 const CarouselComponent = () => {
   return (
-    <div>
-    <Carousel>
+    <Carousel id='carousel'>
       <Carousel.Item className='carouselHeight'>
         <img
           className="imgHeight carousel-img-l"
@@ -63,7 +62,6 @@ const CarouselComponent = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    </div>
   )
 }
 

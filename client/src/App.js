@@ -13,15 +13,19 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar/>
-        <div className="container">
+        <header className="header">
+          <NavBar/>
+        </header>
+        <section className="container">
           <CarouselComponent/>
           <Menu/>
           <OpeningHours/>
           <AboutUs/>
           <ContactUs/>
+        </section>
+        <footer>
           <Footer/>
-        </div>
+        </footer>
       </React.Fragment>
     );
   }
