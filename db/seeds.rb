@@ -5,9 +5,52 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Admin.create(email: 'admin@admin.com', password: 'admin')
+admin = Admin.create(email: 'admin@admin.com', password: 'admin')
 
-Plate.create(name: 'Ichiban Roll', description: 'In: Spicy Tuna (raw), Out: Deep ried', price: 9.25, category_id: 1, admin_id: 1)
-Plate.create(name: 'Spicy Tuna Tempura', description: 'In: Spicy Tuna (raw), Out: Deep ried, green onion, fish eggs', price: 8.95, category_id: 2, admin_id: 1)
-Plate.create(name: 'Chicken Teriyaki Roll', description: 'In: Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 3, admin_id: 1)
-Plate.create(name: "Beef Teriyaki Roll", description: 'In: Crabmeat, avocado, grilled beef', price: 10.95, category_id: 4, admin_id: 1)
+admin.plates.create(name: 'Ichiban Roll', in: 'Spicy Tuna (raw)', out: 'Deep fried', price: 9.25, category_id: 1, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic1.png"), filename: 'pic1.png')
+
+admin.plates.create(name: 'Spicy Tuna Tempura', in: 'Spicy Tuna (raw)', out: 'Deep fried, green onion, fish eggs', price: 8.95, category_id: 1, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic2.png"), filename: 'pic2.png')
+
+admin.plates.create(name: 'Chicken Teriyaki Roll', in: 'Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 1, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic3.png"), filename: 'pic3.png')
+
+admin.plates.create(name: "Beef Teriyaki Roll", in: 'Crabmeat, avocado, grilled beef', price: 10.95, category_id: 1, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic4.png"), filename: 'pic4.png')
+
+admin.plates.create(name: 'Ichiban Roll', in: 'Spicy Tuna (raw)', out: 'Deep fried', price: 9.25, category_id: 2, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic1.png"), filename: 'pic1.png')
+
+admin.plates.create(name: 'Spicy Tuna Tempura', in: 'Spicy Tuna (raw)', out: 'Deep fried, green onion, fish eggs', price: 8.95, category_id: 2, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic2.png"), filename: 'pic2.png')
+
+admin.plates.create(name: 'Chicken Teriyaki Roll', in: 'Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 2, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic3.png"), filename: 'pic3.png')
+
+admin.plates.create(name: "Beef Teriyaki Roll", in: 'Crabmeat, avocado, grilled beef', price: 10.95, category_id: 2, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic4.png"), filename: 'pic4.png')
+
+admin.plates.create(name: 'Ichiban Roll', in: 'Spicy Tuna (raw)', out: 'Deep fried', price: 9.25, category_id: 3, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic1.png"), filename: 'pic1.png')
+
+admin.plates.create(name: 'Spicy Tuna Tempura', in: 'Spicy Tuna (raw)', out: 'Deep fried, green onion, fish eggs', price: 8.95, category_id: 3, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic2.png"), filename: 'pic2.png')
+
+admin.plates.create(name: 'Chicken Teriyaki Roll', in: 'Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 3, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic3.png"), filename: 'pic3.png')
+
+admin.plates.create(name: "Beef Teriyaki Roll", in: 'Crabmeat, avocado, grilled beef', price: 10.95, category_id: 3, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic4.png"), filename: 'pic4.png')
+
+admin.plates.create(name: 'Ichiban Roll', in: 'Spicy Tuna (raw)', out: 'Deep fried', price: 9.25, category_id: 4, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic1.png"), filename: 'pic1.png')
+
+admin.plates.create(name: 'Spicy Tuna Tempura', in: 'Spicy Tuna (raw)', out: 'Deep fried, green onion, fish eggs', price: 8.95, category_id: 4, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic2.png"), filename: 'pic2.png')
+
+admin.plates.create(name: 'Chicken Teriyaki Roll', in: 'Crabmeat, avocado, grilled chicken', price: 9.25, category_id: 4, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic3.png"), filename: 'pic3.png')
+
+admin.plates.create(name: "Beef Teriyaki Roll", in: 'Crabmeat, avocado, grilled beef', price: 10.95, category_id: 4, admin_id: 1)
+admin.plates.last.image.attach(io: File.open("public/images/pic4.png"), filename: 'pic4.png')

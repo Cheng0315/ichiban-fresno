@@ -6,7 +6,7 @@ class Plates extends Component {
     const plates = this.props.sortedPlates
 
     return (
-      plates.map(plate => <div key={plate.id}><div>{plate.name}</div><div>{plate.price}</div><div>{plate.description}</div><div>{plate.category_id}</div></div>)
+      plates.map(plate => <div key={plate.id}><div>{plate.name}</div><div>{plate.price}</div><div>{plate.description}</div><div>{plate.category_id}</div><img src={plate.image_url}/></div>)
     )
   }
 }
