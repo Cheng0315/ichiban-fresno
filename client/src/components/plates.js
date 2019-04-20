@@ -6,7 +6,10 @@ class Plates extends Component {
   render() {
     const leftColumnPlates = this.props.sortedPlates.filter(function(ele){return ele.id % 2 === 1})
     const rightColumnPlates = this.props.sortedPlates.filter(function(ele){return ele.id % 2 === 0})
-    
+    const hasContent = (content) => {
+      return !!content
+    }
+
     return (
       <div className='row list-plates'>
         <div className='col-lg-6'>
@@ -18,13 +21,14 @@ class Plates extends Component {
               <div className='col-lg-8'>
                 <div>{plate.name}</div><div>{plate.price}</div>
                 <div>{plate.description}</div>
-                <div>{plate.in}</div>
-                <div>{plate.out}</div>
+                {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
+                {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
                 <div>{plate.category_id}</div>
               </div>
             </div>)
           }
         </div>
+
         <div className='col-lg-6'>
           {rightColumnPlates.map(plate => 
             <div key={plate.id} className='row'>
@@ -34,8 +38,8 @@ class Plates extends Component {
               <div className='col-lg-8'>
                 <div>{plate.name}</div><div>{plate.price}</div>
                 <div>{plate.description}</div>
-                <div>{plate.in}</div>
-                <div>{plate.out}</div>
+                {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
+                {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
                 <div>{plate.category_id}</div>
               </div>
             </div>)
