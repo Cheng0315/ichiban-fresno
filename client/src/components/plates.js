@@ -1,12 +1,47 @@
 import React, {Component} from 'react';
+import '../css/plates.css';
 
 class Plates extends Component {
 
   render() {
-    const plates = this.props.sortedPlates
-
+    const leftColumnPlates = this.props.sortedPlates.filter(function(ele){return ele.id % 2 === 1})
+    const rightColumnPlates = this.props.sortedPlates.filter(function(ele){return ele.id % 2 === 0})
+    
     return (
-      plates.map(plate => <div key={plate.id}><div>{plate.name}</div><div>{plate.price}</div><div>{plate.description}</div><div>{plate.category_id}</div><img src={plate.image_url}/></div>)
+      <div className='row list-plates'>
+        <div className='col-lg-6'>
+          {leftColumnPlates.map(plate => 
+            <div key={plate.id} className='row'>
+              <div className='col-lg-4'>
+                <img src={plate.image_url}/>
+              </div>
+              <div className='col-lg-8'>
+                <div>{plate.name}</div><div>{plate.price}</div>
+                <div>{plate.description}</div>
+                <div>{plate.in}</div>
+                <div>{plate.out}</div>
+                <div>{plate.category_id}</div>
+              </div>
+            </div>)
+          }
+        </div>
+        <div className='col-lg-6'>
+          {rightColumnPlates.map(plate => 
+            <div key={plate.id} className='row'>
+              <div className='col-lg-4'>
+                <img src={plate.image_url}/>
+              </div>
+              <div className='col-lg-8'>
+                <div>{plate.name}</div><div>{plate.price}</div>
+                <div>{plate.description}</div>
+                <div>{plate.in}</div>
+                <div>{plate.out}</div>
+                <div>{plate.category_id}</div>
+              </div>
+            </div>)
+          }
+        </div>
+      </div>
     )
   }
 }
