@@ -2,6 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../css/contactUs.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ContactUs = () => {
   return (
@@ -11,17 +12,26 @@ const ContactUs = () => {
         <Col>
           <div className='restaurant-info'>
             <div className='restaurant-phone'>
-              <div><strong>Phone</strong></div>
-              <div>(559) 255-7615</div>
+              <span><FontAwesomeIcon icon="phone"/></span>
+              <div className='d-inline-block'>
+                <div><strong>Phone</strong></div>
+                <div>(559) 255-7615</div>
+              </div>
             </div>
             <div className='restaurant-email'>
-              <div><strong>Email</strong></div>
-              <div>ichibanfresno@gmail.com</div>
+              <span><FontAwesomeIcon icon="envelope"/></span>
+              <div className='d-inline-block'>
+                <div><strong>Email</strong></div>
+                <div>ichibanfresno@gmail.com</div>
+              </div>
             </div>
             <div className='restaurant-address'>
-              <div><strong>Address</strong></div>
-              <div>4863 E Butler Ave,</div>
-              <div>Fresno, CA 93727</div>
+              <span><FontAwesomeIcon icon="home"/></span>
+              <div className='d-inline-block'>
+                <div><strong>Address</strong></div>
+                <div>4863 E Butler Ave,</div>
+                <div>Fresno, CA 93727</div>
+              </div>
             </div>
           </div>
         </Col>

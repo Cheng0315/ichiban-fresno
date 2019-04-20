@@ -21,3 +21,7 @@
 .restaurant-address {
   padding-bottom: 30px;
 }
+
+.phone-info {
+  display: inline-block;
+}
