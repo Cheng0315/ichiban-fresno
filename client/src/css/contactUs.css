@@ -3,11 +3,7 @@
 }
 
 .restaurant-info {
-  padding: 10px 40px 40px 40px;
-}
-
-.restaurant-map {
-  padding: 10px 40px 40px 40px;
+  padding: 0 40px 40px 40px;
 }
 
 .restaurant-phone {
@@ -22,6 +18,26 @@
   padding-bottom: 30px;
 }
 
-.phone-info {
-  display: inline-block;
+.restaurant-info p {
+  margin: 0;
+  padding: 0;
+}
+
+.restaurant-info-style {
+  padding: 20px;
+  padding-bottom: 52px;
+  background-color: #f2f2f2;
+}
+
+.r-sub-title {
+  background-color: #e4e4e4;
+}
+
+#contact-us h4 {
+  padding-bottom: 3px;
+  display: block;
+}
+
+#contact-us h2 {
+  display: block;
 }
