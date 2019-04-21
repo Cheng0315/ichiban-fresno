@@ -44,11 +44,11 @@ class Menu extends Component {
             <MenuBtns handleClick={this.handleClick}/>
             <div className='listing-items'>
               <div className='row list-plates'>
-                <div className='col-lg-6 col-md-6'>
-                  <Plates sortedPlates={this.state.sortedPlates.filter(function(ele){return ele.id % 2 === 1})}/>
+                <div className='col-lg-6 col-md-8'>
+                  <Plates notLastItem={true} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>
                 </div>
-                <div className='col-lg-6 col-md-6'>
-                  <Plates sortedPlates={this.state.sortedPlates.filter(function(ele){return ele.id % 2 === 0})}/>
+                <div className='col-lg-6 col-md-8'>
+                  <Plates notLastItem={false} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
                 </div>
               </div>
             </div>

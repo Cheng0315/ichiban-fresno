@@ -30,3 +30,16 @@
   border-width: 1px;
   border-color: #e4e3e3;
 }
+
+@media (max-width: 991px) {
+  .list-plates {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .md-sm-hr {
+    display: none;
+  }
+}
