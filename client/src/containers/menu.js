@@ -43,7 +43,14 @@ class Menu extends Component {
           <div className="menu-border">
             <MenuBtns handleClick={this.handleClick}/>
             <div className='listing-items'>
-              <Plates sortedPlates={this.state.sortedPlates}/>
+              <div className='row list-plates'>
+                <div className='col-lg-6'>
+                  <Plates sortedPlates={this.state.sortedPlates.filter(function(ele){return ele.id % 2 === 1})}/>
+                </div>
+                <div className='col-lg-6'>
+                  <Plates sortedPlates={this.state.sortedPlates.filter(function(ele){return ele.id % 2 === 0})}/>
+                </div>
+              </div>
             </div>
           </div>
         </div>
