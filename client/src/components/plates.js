@@ -19,8 +19,8 @@ class Plates extends Component {
                 <img src={plate.image_url}/>
               </div>
               <div className='col-lg-8'>
-                <div>{plate.name}</div><div>{plate.price}</div>
-                <div>{plate.description}</div>
+                <div className='row'><div className='col-lg-8 plate-name'>{plate.name} . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div><div className='col-lg-4'>${plate.price}</div></div>
+                {hasContent(plate.description) ? (<div>In: {plate.in}</div>) : ('')}
                 {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
                 {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
                 <div>{plate.category_id}</div>
@@ -36,8 +36,8 @@ class Plates extends Component {
                 <img src={plate.image_url}/>
               </div>
               <div className='col-lg-8'>
-                <div>{plate.name}</div><div>{plate.price}</div>
-                <div>{plate.description}</div>
+              <div className='row'><div className='col-lg-8 plate-name'>{plate.name} . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div><div className='col-lg-4'>${plate.price}</div></div>
+                {hasContent(plate.description) ? (<div>'In: {plate.in}'</div>) : ('')}
                 {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
                 {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
                 <div>{plate.category_id}</div>
