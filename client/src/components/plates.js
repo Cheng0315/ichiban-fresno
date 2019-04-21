@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ResponsiveHR from './responsiveHR'
 import '../css/plates.css';
 
 class Plates extends Component {
@@ -7,25 +8,6 @@ class Plates extends Component {
     const plates = this.props.sortedPlates
     const hasContent = (content) => {
       return !!content
-    }
-    const isLastPlate = (plateId, plates, notLastItem) => {
-      if (plates[plates.length-1].id === plateId && !!notLastItem) {
-        return (
-          <div className='row md-sm-hr'>
-            <div className='col-lg-8 offset-lg-4'>
-              <hr/>
-            </div>
-          </div>
-        )
-      } else if (plates[plates.length-1].id !== plateId){
-        return (
-          <div className='row'>
-            <div className='col-lg-8 offset-lg-4'>
-              <hr/>
-            </div>
-          </div>
-        )
-      }
     }
 
     return (
@@ -45,7 +27,7 @@ class Plates extends Component {
               {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
             </div>
           </div>
-          {isLastPlate(plate.id, this.props.sortedPlates, this.props.notLastItem)}
+          < ResponsiveHR plateId={plate.id} plates={this.props.sortedPlates} notLastItem={this.props.notLastItem}/>
         </div>
       )
     )

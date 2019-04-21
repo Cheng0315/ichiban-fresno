@@ -39,7 +39,7 @@
 }
 
 @media (min-width: 992px) {
-  .md-sm-hr {
+  .sm-md-hr {
     display: none;
   }
 }
