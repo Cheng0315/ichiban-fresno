@@ -52,5 +52,5 @@ admin.plates.last.image.attach(io: File.open("public/images/pic1.png"), filename
 admin.plates.create(name: 'Spicy Tuna Tempura', in: 'Spicy Tuna (raw)', out: 'Deep fried, green onion, fish eggs', price: 8.95, category_id: 4, admin_id: 1)
 admin.plates.last.image.attach(io: File.open("public/images/pic2.png"), filename: 'pic2.png')
 
-admin.plates.create(name: "Beef Teriyaki Roll", in: 'Crabmeat, avocado, grilled beef', price: 10.95, category_id: 4, admin_id: 1)
+admin.plates.create(name: "Beef Teriyaki Roll", description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.', in: 'Crabmeat, avocado, grilled beef', out: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et', price: 10.95, category_id: 4, admin_id: 1)
 admin.plates.last.image.attach(io: File.open("public/images/pic4.png"), filename: 'pic4.png')
