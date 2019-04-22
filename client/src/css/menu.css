@@ -5,7 +5,7 @@
 .menu-btns {
   display: flex;
   justify-content: center;
-  
+  background-color: #f4f4f4;
 }
 
 .menu-btns button {
@@ -35,6 +35,10 @@
   .list-plates {
     display: flex;
     justify-content: center;
+  }
+
+  .menu-btns {
+    display: none;
   }
 }
 

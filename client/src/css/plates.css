@@ -103,6 +103,10 @@
     padding: 0;
     flex-basis: 67%;
   }
+
+  .select-menu {
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -133,5 +137,9 @@
     margin: 1em 0;
     padding: 0;
     flex-basis: 71%;
+  }
+
+  .select-menu {
+    display: none;
   }
 }

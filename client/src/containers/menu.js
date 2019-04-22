@@ -3,6 +3,7 @@ import Plates from '../components/plates';
 import { connect } from 'react-redux';
 import { fetchAllPlates } from '../actions/platesAction';
 import MenuBtns from '../components/menuBtns';
+import MenuSelectTag from '../components/menuSelectTag'
 import '../css/menu.css';
 
 class Menu extends Component {
@@ -40,6 +41,7 @@ class Menu extends Component {
       <div id="menu">
         <h2 className="text-center">Browse Our Menu</h2>
         <div className='menu-inner-container'>
+          <MenuSelectTag handleChange={this.handleClick}/>
           <MenuBtns handleClick={this.handleClick}/>
           <div className='menu-content'>
             <div className='row list-plates'>

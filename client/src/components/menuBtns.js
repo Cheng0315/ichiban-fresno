@@ -3,8 +3,9 @@ import Button from 'react-bootstrap/Button';
 import '../css/menu.css';
 
 const MenuBtns = (props) => {
+
   return (
-    <div className="btns-background-color">
+    <React.Fragment>
       <div className='menu-btns'>
         <Button variant="link" key='1' value='1' onClick={props.handleClick}>Ichiban Rolls & Sushi</Button>
         <Button variant="link" key='2' value='2' onClick={props.handleClick}>Teriyaki Bowl</Button>
@@ -18,9 +19,11 @@ const MenuBtns = (props) => {
         <Button variant="link" key='8' value='8' onClick={props.handleClick}>Dinner Special</Button>
         <Button variant="link" key='9' value='9' onClick={props.handleClick}>Side Orders</Button>
         <Button variant="link" key='10' value='10' onClick={props.handleClick}>Beverages</Button>
+        <Button variant="link" key='11' value='11' onClick={props.handleClick}>Chef's Choice</Button>
       </div>
-    </div>
+    </React.Fragment>
   )
+
 }
 
 export default MenuBtns
