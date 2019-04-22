@@ -1,18 +1,19 @@
 .carousel {
   margin-bottom: 25px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.19);
   background-color: #e06039;
 }
 
 
 @media (max-width: 767px) {
-  .carouselHeight {
-    height: 200px;
+  .carouselHeight img{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
   }
-  
-  .imgHeight {
-    height: 200px;
-    object-fit: contain;
+
+  .carousel-img-r, .carousel-caption {
+    display: none;
   }
 }
 
@@ -22,28 +23,30 @@
   }
 
   .carouselHeight {
-    height: 180px;
+    height: 220px;
   }
   
   .imgHeight {
     -webkit-filter: drop-shadow(0 0 30px #333); 
-    filter: drop-shadow(0 0 30px #333); 
-    height: 180px;
+    filter: drop-shadow(0 0 30px white); 
+    height: 170px;
     object-fit: contain;
   }
 
   .carousel-img-r {
     position: absolute;
+    top: 11%;
     right: 40px;
   }
   
   .carousel-img-l {
     position: absolute;
+    top: 11%;
     left: 40px;
   }
 
   .carousel h1 {
-    color: #ff7043;
+    color: white;
     text-shadow: 2px 2px 4px #333;
     font-size: 26px;
   }
@@ -60,7 +63,7 @@
   
   .imgHeight {
     -webkit-filter: drop-shadow(0 0 30px #333); 
-    filter: drop-shadow(0 0 30px #333); 
+    filter: drop-shadow(0 0 30px white); 
     height: 200px;
     object-fit: contain;
   }
@@ -78,9 +81,9 @@
   }
 
   .carousel h1 {
-    color: #ff7043;
+    color: white;
     text-shadow: 2px 2px 4px #333;
-    font-size: 33px;
+    font-size: 37px;
   }
 }
 
@@ -114,8 +117,10 @@
 
   .carousel h1 {
     color: White;
+    font-size: 45px;
     text-shadow: 2px 2px 4px #333;
   }
 }
+
 
 
