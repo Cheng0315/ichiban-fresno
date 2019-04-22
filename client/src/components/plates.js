@@ -13,14 +13,16 @@ class Plates extends Component {
     return (
       plates.map(plate => 
         <div key={plate.id} className='plates-info'>
-          <div className='row'>
-            <div className='plate-img col-lg-4 col-md-5 d-flex justify-content-end'>
+          <div className='pl-container'>
+            <div className='pl-img'>
               <img src={plate.image_url}/>
             </div>
-            <div className='col-lg-8 col-md-7'>
-              <div className='row name-and-price'>
-                <h6 className='col-lg-9 col-md-9 col-sm-9 col-9 plate-name'>{plate.name}.................................................</h6>
-                <h6 className='col-lg-3 col-md-3 col-sm-3 col-3 d-flex justify-content-end'>${plate.price}</h6>
+            <div className='pl-info'>
+              <div className='name-and-price'>
+                <h6 className='plate-name'>{plate.name}..............................................................................................</h6>
+                <div className='plate-price'>
+                  <h6>${plate.price}</h6>
+                </div>
               </div>
               {hasContent(plate.description) ? (<div>{plate.description}</div>) : ('')}
               {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
