@@ -2,10 +2,6 @@
   margin-top: 40px;
 }
 
-.restaurant-info {
-  padding: 0 40px 40px 40px;
-}
-
 .restaurant-phone {
   padding-bottom: 30px;
 }
@@ -42,3 +38,10 @@
 #contact-us h2 {
   display: block;
 }
+
+@media (min-width: 768px) {
+  .restaurant-info {
+    padding: 0 40px 40px 40px;
+  }
+}
+

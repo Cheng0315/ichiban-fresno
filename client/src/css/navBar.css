@@ -1,12 +1,11 @@
 .header {
-  min-height: 74px;
-  background-color: #f8e080 !important; 
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 }
 
 .navbar {
-  min-height: 70px;
+  border-bottom: 2px solid;
+  border-color: #fada58;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
   background-color: #131313 !important; 
 }
 
@@ -15,6 +14,8 @@
 }
 
 nav h2 {
+  display: inline-block;
+  margin-bottom: 0px;
   font-family: 'Julee', cursive;
 }
 
