@@ -21,7 +21,7 @@
   background-color: #f4f4f4;
 }
 
-.listing-items{
+.menu-content{
   padding: 55px 55px 55px 55px;
 }
 
@@ -38,8 +38,3 @@
   }
 }
 
-@media (min-width: 992px) {
-  .sm-md-hr {
-    display: none;
-  }
-}

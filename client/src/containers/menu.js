@@ -41,7 +41,7 @@ class Menu extends Component {
         <h2 className="text-center">Browse Our Menu</h2>
         <div className='menu-inner-container'>
           <MenuBtns handleClick={this.handleClick}/>
-          <div className='listing-items'>
+          <div className='menu-content'>
             <div className='row list-plates'>
               <div className='col-lg-6 col-md-8'>
                 <Plates notLastItem={true} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>

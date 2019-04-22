@@ -12,12 +12,12 @@ class Plates extends Component {
 
     return (
       plates.map(plate => 
-        <div key={plate.id} className='plates-info'>
-          <div className='pl-container'>
-            <div className='pl-img'>
+        <div key={plate.id} className='plate-container'>
+          <div className='plate-content'>
+            <div className='plate-img'>
               <img src={plate.image_url}/>
             </div>
-            <div className='pl-info'>
+            <div className='plate-info'>
               <div className='name-and-price'>
                 <h6 className='plate-name'>{plate.name}..............................................................................................</h6>
                 <div className='plate-price'>

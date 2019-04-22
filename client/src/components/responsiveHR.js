@@ -8,18 +8,16 @@ const ResponsiveHR = (props) => {
 
   if (plates[plates.length-1].id === plateId && !!notLastItem) {
     return (
-      <div className='row sm-md-hr'>
-        <div className='col-lg-8 offset-lg-4'>
+      <div className='sm-md-hr'>
+        <div className='hl'>
           <hr/>
         </div>
       </div>
     )
   } else if (plates[plates.length-1].id !== plateId){
     return (
-      <div className='row'>
-        <div className='col-lg-8 offset-lg-4'>
-          <hr/>
-        </div>
+      <div className='hl'>
+        <hr/>
       </div>
     )
   } else {

@@ -4,33 +4,19 @@
   background-size: cover;
   display: block;
   border-style: solid;
-  border-width: 4px;
   border-color: #ff7043;
+  border-width: 4px;
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
 }
 
-.list-plates .plates-info {
+.list-plates .plate-container {
   margin-bottom: 35px;
 }
 
-@media (max-width: 991px) {
-  hr {
-    margin: 35px 0 0;
-  }
-}
-
-.pl-container {
+.plate-content {
   display: flex; 
-}
-
-.pl-img {
-  flex: 0 0 26%; 
-}
-
-.pl-info{
-  min-width: 0; 
 }
 
 .name-and-price {
@@ -42,4 +28,110 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .plate-content {
+    display: flex; 
+    flex-direction: column !important;
+  }
+
+  .list-plates img {
+    margin-bottom: 15px;
+  }
+
+  .list-plates img{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    display: block;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #ff7043;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+  }
+
+  .plate-content .plate-img {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .plate-img {
+    flex: 0 0 33%; 
+  }
+  
+  .plate-info{
+    min-width: 0; 
+  }
+}
+
+@media (max-width: 991px) {
+  hr {
+    margin: 35px 0 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .plate-img {
+    flex: 0 0 32%; 
+  }
+  
+  .plate-info{
+    min-width: 0; 
+  }
+
+  .sm-md-hr {
+    display: none;
+  }
+
+  .hl {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(233, 231, 231);
+    opacity: 0.7;
+    margin: 1em 0;
+    padding: 0;
+    flex-basis: 67%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .plate-img {
+    flex: 0 0 26%; 
+  }
+  
+  .plate-info{
+    min-width: 0; 
+  }
+
+  .sm-md-hr {
+    display: none;
+  }
+
+  .hl {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    margin-right: 13px !important;
+    border: 0;
+    border-top: 1px solid rgb(233, 231, 231);
+    opacity: 0.7;
+    margin: 1em 0;
+    padding: 0;
+    flex-basis: 71%;
+  }
 }
