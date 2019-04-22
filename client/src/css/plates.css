@@ -35,6 +35,21 @@
   justify-content: space-between;
 }
 
+.menu-select-tag {
+  height: 65px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-select-tag select{
+  height: 35px;
+  width: 200px;
+  border-radius: 3px;
+}
+
+
 @media (max-width: 375px) {
   .menu-content{
     padding: 55px 35px 0 35px !important;
@@ -48,7 +63,7 @@
   }
 
   .list-plates img {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
 
   .list-plates img{
