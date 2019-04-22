@@ -14,7 +14,7 @@ class Plates extends Component {
       plates.map(plate => 
         <div key={plate.id} className='plates-info'>
           <div className='row'>
-            <div className='col-lg-4 col-md-5 d-flex justify-content-end'>
+            <div className='plate-img col-lg-4 col-md-5 d-flex justify-content-end'>
               <img src={plate.image_url}/>
             </div>
             <div className='col-lg-8 col-md-7'>
