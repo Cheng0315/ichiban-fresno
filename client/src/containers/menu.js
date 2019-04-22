@@ -45,10 +45,10 @@ class Menu extends Component {
           <MenuBtns handleClick={this.handleClick}/>
           <div className='menu-content'>
             <div className='row list-plates'>
-              <div className='col-lg-6 col-md-8'>
+              <div className='col-lg-6 col-md-12'>
                 <Plates notLastItem={true} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>
               </div>
-              <div className='col-lg-6 col-md-8'>
+              <div className='col-lg-6 col-md-12'>
                 <Plates notLastItem={false} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>

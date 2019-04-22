@@ -4,7 +4,7 @@ import '../css/plates.css';
 const MenuSelectTag = (props) => {  
 
   return (
-    <select className='select-menu' onChange={props.handleChange}>
+    <select className='menu-select-tag' onChange={props.handleChange}>
       <option value="1" >Ichiban Rolls & Sushi</option>
       <option value="2">Teriyaki Bowl</option>
       <option value="3">Udon</option>
