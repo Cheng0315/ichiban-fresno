@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Plates from '../components/plates';
 import { connect } from 'react-redux';
 import fetchPlates from '../actions/plateActions'
+import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
 import '../css/menu.css';
@@ -10,6 +11,7 @@ class Menu extends Component {
 
   componentDidMount() {
     this.props.fetchPlates();
+    this.props.sortPlates();
   }
 
   filterPlates = (e) => {
@@ -20,7 +22,7 @@ class Menu extends Component {
 
   handleClick = (e) => {
     this.setState({
-      sortedPlates: this.props.plates.filter(this.filterPlates(e))
+      sortedPlates: this.props.sortedPlates.filter(this.filterPlates(e))
     })
   }
 
@@ -34,10 +36,10 @@ class Menu extends Component {
           <div className='menu-content'>
             <div className='list-plates'>
               <div className='left-col'>
-                <Plates notLastItem={true} sortedPlates={this.props.plates.filter(function(ele, index){return index % 2 === 0})}/>
+                <Plates notLastItem={true} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>
               </div>
               <div className='right-col'>
-                <Plates notLastItem={false} sortedPlates={this.props.plates.filter(function(ele, index){return index % 2 === 1})}/>
+                <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
           </div>
@@ -48,8 +50,9 @@ class Menu extends Component {
 }
 
 const mapStateToProps = state => ({
-  plates: state.plates.plates
+  plates: state.plates.plates,
+  sortedPlates: state.plates.sortedPlates
 })
 
 
-export default connect(mapStateToProps, {fetchPlates})(Menu)
+export default connect(mapStateToProps, {fetchPlates, sortPlates})(Menu)
