@@ -6,13 +6,13 @@ class SessionsController < ApiController
       allow_token_to_be_used_only_once_for(admin)
       send_token_for_valid_login_of(admin)
     else
-      render_unauthorized('Error with login')
+      render_unauthorized('Error with signin')
     end
   end
 
   def destroy
-    logout
-    render json: {ok: 'oj'}.to_json
+    sign_out
+    render json: {sign_out: true}.to_json
   end
 
   private
@@ -25,7 +25,7 @@ class SessionsController < ApiController
     admin.regenerate_auth_token
   end
 
-  def logout
+  def sign_out
     current_user.invalidate_token
   end
 end
