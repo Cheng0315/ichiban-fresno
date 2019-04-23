@@ -11,7 +11,7 @@ class Menu extends Component {
 
   componentDidMount() {
     this.props.fetchPlates();
-    this.props.sortPlates();
+    this.props.sortPlates(1);
   }
 
   filterPlates = (e) => {
@@ -21,9 +21,7 @@ class Menu extends Component {
   }
 
   handleClick = (e) => {
-    this.setState({
-      sortedPlates: this.props.sortedPlates.filter(this.filterPlates(e))
-    })
+    this.props.sortPlates(parseInt(e.target.value))
   }
 
   render() {
