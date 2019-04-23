@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Auth from '../modules/auth';
 import '../css/signIn.css';
 
 class SignIn extends Component {
@@ -17,7 +18,9 @@ class SignIn extends Component {
         },
       })
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => 
+        Auth.authenticateToken(response.token))
+      .catch(error => console.log(error))
     } else {
       console.log('oh no')
     }

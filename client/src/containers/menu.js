@@ -1,27 +1,15 @@
 import React, {Component} from 'react';
 import Plates from '../components/plates';
 import { connect } from 'react-redux';
-import { fetchAllPlates } from '../actions/platesAction';
+import fetchPlates from '../actions/plateActions'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
 import '../css/menu.css';
 
 class Menu extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      plates: [],
-      sortedPlates: []
-    }
-  }
-
   componentDidMount() {
-    fetch('/api/plates')
-      .then(response => response.json())
-      .then(platesData => this.setState({plates: platesData, sortedPlates: platesData.filter(function(ele){return ele.category_id === 1})}))
-      .catch(error => console.log(error))
+    this.props.fetchPlates();
   }
 
   filterPlates = (e) => {
@@ -32,7 +20,7 @@ class Menu extends Component {
 
   handleClick = (e) => {
     this.setState({
-      sortedPlates: this.state.plates.filter(this.filterPlates(e))
+      sortedPlates: this.props.plates.filter(this.filterPlates(e))
     })
   }
 
@@ -46,10 +34,10 @@ class Menu extends Component {
           <div className='menu-content'>
             <div className='list-plates'>
               <div className='left-col'>
-                <Plates notLastItem={true} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>
+                <Plates notLastItem={true} sortedPlates={this.props.plates.filter(function(ele, index){return index % 2 === 0})}/>
               </div>
               <div className='right-col'>
-                <Plates notLastItem={false} sortedPlates={this.state.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
+                <Plates notLastItem={false} sortedPlates={this.props.plates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
           </div>
@@ -59,18 +47,9 @@ class Menu extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    plates: state.plates,
-    sortedPlates: state.sortedPlates,
-    category: state.category
-  }
-}
+const mapStateToProps = state => ({
+  plates: state.plates.plates
+})
 
-/*const mapDispatchToProps = dispatch => {
-  return {
-    fetchAllPlates: () => dispatch(fetchAllPlates())
-  }
-}*/
 
-export default connect(mapStateToProps, {fetchAllPlates})(Menu)
+export default connect(mapStateToProps, {fetchPlates})(Menu)
