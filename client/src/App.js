@@ -4,7 +4,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import HomePageContainer from './containers/homePageContainer'
 import SignIn from './components/signIn';
-import Auth from './modules/auth';
+import Auth from './modules/Auth';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone, faHome, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
@@ -12,12 +12,6 @@ import './App.css';
 library.add(faPhone, faHome, faEnvelope)
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      auth: Auth.isUserAuthenticated(),
-    }
-  }
 
   render() {
     return (

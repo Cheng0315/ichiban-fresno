@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Plates from '../components/plates';
 import { connect } from 'react-redux';
-import fetchPlates from '../actions/plateActions'
+import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
@@ -16,6 +16,7 @@ class Menu extends Component {
   handleClick = (e) => {
     this.props.sortPlates(parseInt(e.target.value), this.props.plates)
   }
+  
 
   render() {
     return (
@@ -42,7 +43,8 @@ class Menu extends Component {
 
 const mapStateToProps = state => ({
   plates: state.plates.plates,
-  sortedPlates: state.plates.sortedPlates
+  sortedPlates: state.plates.sortedPlates,
+  auth: state.plates.auth
 })
 
 

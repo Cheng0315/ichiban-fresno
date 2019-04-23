@@ -1,8 +1,9 @@
-import {FETCH_PLATES, NEW_PLATE} from '../actions/types'
+import Auth from '../modules/Auth';
 
 const initialState = {
   plates: [],
-  sortedPlates: []
+  sortedPlates: [],
+  auth: !!sessionStorage.getItem('token')
 }
 
 export default function plateReducer(state = initialState, action) {
@@ -11,6 +12,8 @@ export default function plateReducer(state = initialState, action) {
       return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id === 1})}
     case 'SORT_PLATES':
       return {...state, sortedPlates: action.payload}
+    case 'UPDATE_AUTH': 
+      return {...state, auth: action.payload}
     case 'NEW_PLATE':
       return {
         ...state, 

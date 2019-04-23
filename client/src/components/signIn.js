@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Auth from '../modules/auth';
+import updateAuth from '../actions/updateAuth'
+import Auth from '../modules/Auth';
 import '../css/signIn.css';
 
 class SignIn extends Component {
@@ -18,11 +20,13 @@ class SignIn extends Component {
         },
       })
       .then(response => response.json())
-      .then(response => 
-        Auth.authenticateToken(response.token))
+      .then(response => {
+        sessionStorage.setItem('token', response.token);
+        this.props.updateAuth(!!sessionStorage.getItem('token'))
+      })
       .catch(error => console.log(error))
     } else {
-      console.log('oh no')
+      console.log('Form contains empty field')
     }
   }
 
@@ -70,4 +74,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn
+export default connect(null, {updateAuth})(SignIn)
