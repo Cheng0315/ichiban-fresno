@@ -1,8 +1,8 @@
-class SessionController < ApiController
+class SessionsController < ApiController
   skip_before_action :require_login, only: [:create], raise: false
 
   def create
-    if admin = Admin.validate_login(params[:email, params[:password]])
+    if admin = Admin.validate_login(params[:email], params[:password])
       allow_token_to_be_used_only_once_for(admin)
       send_token_for_valid_login_of(admin)
     else
@@ -12,7 +12,7 @@ class SessionController < ApiController
 
   def destroy
     logout
-    head :ok
+    render json: {ok: 'oj'}.to_json
   end
 
   private

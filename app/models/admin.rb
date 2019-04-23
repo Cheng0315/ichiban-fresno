@@ -1,6 +1,5 @@
 class Admin < ApplicationRecord
   has_many :plates
-  validates_uniquesness_of :email
   has_secure_password
   has_secure_token :auth_token
 

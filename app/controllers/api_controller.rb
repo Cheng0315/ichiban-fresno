@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   def require_login
-    authenticate_token || render_unaithorized('Access Denied')
+    authenticate_token || render_unauthorized('Access Denied')
   end
 
   def current_user
@@ -9,7 +9,7 @@ class ApiController < ApplicationController
 
   protected
 
-  def render_unaithorized(msg)
+  def render_unauthorized(msg)
     errors = {errors: [detail: msg]}
     render json: errors, status: :unauthorized
   end
