@@ -1,12 +1,10 @@
-const sortPlates = (categoryId) => dispatch => {
-  fetch('/api/plates')
-    .then(response => response.json())
-    .then(platesData => 
-      dispatch({
-        type: 'SORT_PLATES',
-        payload: platesData.filter(function(ele){return ele.category_id === categoryId})
-    }))
-    .catch(error => console.log(error))
+const sortPlates = (categoryId, plates) => dispatch => {
+  
+  dispatch({
+    type: 'SORT_PLATES',
+    payload: plates.filter(function(ele){return ele.category_id === categoryId})
+  })
+
 }
 
 export default sortPlates;

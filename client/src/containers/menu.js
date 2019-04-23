@@ -11,17 +11,10 @@ class Menu extends Component {
 
   componentDidMount() {
     this.props.fetchPlates();
-    this.props.sortPlates(1);
-  }
-
-  filterPlates = (e) => {
-    return function(ele) {
-      return ele.category_id === parseInt(e.target.value)
-    }
   }
 
   handleClick = (e) => {
-    this.props.sortPlates(parseInt(e.target.value))
+    this.props.sortPlates(parseInt(e.target.value), this.props.plates)
   }
 
   render() {
