@@ -27,7 +27,7 @@
   }
   
   .imgHeight {
-    -webkit-filter: drop-shadow(0 0 30px #333); 
+    -webkit-filter: drop-shadow(0 0 30px white); 
     filter: drop-shadow(0 0 30px white); 
     height: 170px;
     object-fit: contain;
@@ -62,7 +62,7 @@
   }
   
   .imgHeight {
-    -webkit-filter: drop-shadow(0 0 30px #333); 
+    -webkit-filter: drop-shadow(0 0 30px white); 
     filter: drop-shadow(0 0 30px white); 
     height: 200px;
     object-fit: contain;
@@ -97,7 +97,7 @@
   }
   
   .imgHeight {
-    -webkit-filter: drop-shadow(0 0 30px #333); 
+    -webkit-filter: drop-shadow(0 0 30px white); 
     filter: drop-shadow(0 0 30px white); 
     height: 240px;
     object-fit: contain;
