@@ -14,9 +14,12 @@
   border-radius: 3px;
 }
 
-
+.closed-day {
+  padding-bottom: 53px;
+}
 
 .opening-hrs-boxes h5 {
+  padding-bottom: 14px;
   padding-top: 10px;
 }
 
