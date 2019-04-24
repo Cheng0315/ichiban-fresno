@@ -1,37 +1,41 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import ResponsiveHR from './responsiveHR'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import '../css/plates.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class Plates extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
     this.state = {
       show: false,
       imageUrl: ''
     };
-  }
 
-  handleClose() {
-    this.setState({ show: false });
-  }
+    this.handleShow = (e) => {
+      e.preventDefault()
+      this.setState({ show: true, imageUrl: e.target.parentElement.getAttribute('name') });
+    };
 
-  handleShow(e) {
-    this.setState({ show: true, imageurl: e.target.parentElement.getAttribute('name')});
-    e.preventDefault();
+    this.handleHide = () => {
+      this.setState({ show: false });
+    };
   }
 
   render() {
+    let editIcon = '';
     const plates = this.props.sortedPlates
     const hasContent = (content) => {
       return !!content
     }
+
+    if (this.props.auth) {
+      editIcon = <h6><span className='edit-plates'><FontAwesomeIcon icon="edit"/></span></h6>
+    } 
 
     return (
       plates.map(plate => 
@@ -46,15 +50,19 @@ class Plates extends Component {
                 <div className='plate-price'>
                   <h6>${plate.price}</h6>
                 </div>
+                {editIcon}
               </div>
               {hasContent(plate.description) ? (<div>{plate.description}</div>) : ('')}
               {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
               {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
             </div>
           </div>
-          <Modal show={this.state.show} onHide={this.handleClose}>
-            {console.log(this.state.imageUrl)}
-          </Modal>
+          <Modal
+              show={this.state.show}
+              onHide={this.handleHide}
+            >
+              <img src={this.state.imageUrl}/>
+            </Modal>
           < ResponsiveHR plateId={plate.id} plates={this.props.sortedPlates} notLastItem={this.props.notLastItem}/>
         </div>
       )
@@ -62,4 +70,8 @@ class Plates extends Component {
   }
 }
 
-export default Plates
+const mapStateToProps = state => ({
+  auth: state.plates.auth
+})
+
+export default connect(mapStateToProps)(Plates)
