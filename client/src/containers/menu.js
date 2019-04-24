@@ -44,7 +44,6 @@ class Menu extends Component {
 const mapStateToProps = state => ({
   plates: state.plates.plates,
   sortedPlates: state.plates.sortedPlates,
-  auth: state.plates.auth
 })
 
 

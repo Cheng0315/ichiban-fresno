@@ -1,26 +1,58 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../css/navBar.css';
 
-const NavBar = () => {
-  return (
-    <Navbar bg="light" expand="lg" className='navbar'>
-      <div className="container">
-      <Navbar.Brand className='nav-brand' href="/"><h2>ICHIBAN</h2></Navbar.Brand>
-      <Navbar.Toggle className="custom-toggler" aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link className='nav-link' href="/">Home</Nav.Link>
-          <Nav.Link className='nav-link' href="/#menu">Menu</Nav.Link>
-          <Nav.Link className='nav-link' href="/#opening-hours">Opening Hours</Nav.Link>
-          <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
-          <Nav.Link className='nav-link' href="/#contact-us">Contact Us</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-      </div>
-    </Navbar>
-  )
+class NavBar extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault();
+
+    fetch('/api/sign_out', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': sessionStorage.getItem('token'),
+        'Authorization': `Token ${sessionStorage.getItem('token')}`
+      },
+    })
+    .then(response => response.json())
+    .then(response => {sessionStorage.removeItem('token');
+    this.props.updateAuth(!!sessionStorage.getItem('token'))})
+    .catch(error => console.log(error))
+  }
+
+  render() {
+    let logOut = '';
+
+    if (this.props.auth) {
+      logOut = <Nav.Link className='nav-link' href="/#contact-us" onClick={this.handleClick}>Log Out</Nav.Link>;
+    } 
+
+    return (
+      <Navbar bg="light" expand="lg" className='navbar'>
+        <div className="container">
+        <Navbar.Brand className='nav-brand' href="/"><h2>ICHIBAN</h2></Navbar.Brand>
+        <Navbar.Toggle className="custom-toggler" aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link className='nav-link' href="/">Home</Nav.Link>
+            <Nav.Link className='nav-link' href="/#menu">Menu</Nav.Link>
+            <Nav.Link className='nav-link' href="/#opening-hours">Opening Hours</Nav.Link>
+            <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
+            <Nav.Link className='nav-link' href="/#contact-us">Contact Us</Nav.Link>
+            {logOut}
+          </Nav>
+        </Navbar.Collapse>
+        </div>
+      </Navbar>
+    )
+  }
 }
 
-export default NavBar
+const mapStateToProps = state => ({
+  auth: state.plates.auth
+})
+
+export default connect(mapStateToProps)(NavBar)
