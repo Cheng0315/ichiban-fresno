@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import updateAuth from '../actions/updateAuth'
@@ -22,7 +23,8 @@ class SignIn extends Component {
       .then(response => response.json())
       .then(response => {
         sessionStorage.setItem('token', response.token);
-        this.props.updateAuth(!!sessionStorage.getItem('token'))
+        this.props.updateAuth(!!sessionStorage.getItem('token'));
+        this.props.history.push('/');
       })
       .catch(error => console.log(error))
     } else {

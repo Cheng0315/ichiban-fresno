@@ -18,7 +18,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Route exact path='/' component={HomePageContainer}/>
-          <Route exact path='/admin' component={SignIn} state={this.state}/>
+          <Route exact path='/admin' component={SignIn}/>
         </Router>
       </Provider>
     )

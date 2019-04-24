@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../css/navBar.css';
@@ -7,8 +9,7 @@ import '../css/navBar.css';
 class NavBar extends Component {
 
   handleClick = (e) => {
-    e.preventDefault();
-
+    e.preventDefault()
     fetch('/api/sign_out', {
       method: 'delete',
       headers: {
@@ -18,8 +19,10 @@ class NavBar extends Component {
       },
     })
     .then(response => response.json())
-    .then(response => {sessionStorage.removeItem('token');
-    this.props.updateAuth(!!sessionStorage.getItem('token'))})
+    .then(response => {
+      sessionStorage.removeItem('token');
+      this.props.updateAuth(!!sessionStorage.getItem('token'));
+    })
     .catch(error => console.log(error))
   }
 
@@ -27,7 +30,7 @@ class NavBar extends Component {
     let logOut = '';
 
     if (this.props.auth) {
-      logOut = <Nav.Link className='nav-link' href="/#contact-us" onClick={this.handleClick}>Log Out</Nav.Link>;
+      logOut = <Nav.Link className='nav-link' href="/" onClick={this.handleClick}>Log Out</Nav.Link>;
     } 
 
     return (
@@ -55,4 +58,4 @@ const mapStateToProps = state => ({
   auth: state.plates.auth
 })
 
-export default connect(mapStateToProps)(NavBar)
+export default connect(mapStateToProps, {updateAuth})(NavBar)
