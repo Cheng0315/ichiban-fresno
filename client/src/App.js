@@ -12,7 +12,6 @@ import './App.css';
 library.add(faPhone, faHome, faEnvelope, faEdit)
 
 class App extends Component {
-
   render() {
     return (
       <Provider store={store}>

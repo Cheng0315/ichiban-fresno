@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import Plates from '../components/plates';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
+import NewDishForm from '../components/newDishForm';
 import '../css/menu.css';
 
 class Menu extends Component {
-
+  
   componentDidMount() {
     this.props.fetchPlates();
   }
@@ -16,7 +18,6 @@ class Menu extends Component {
   handleClick = (e) => {
     this.props.sortPlates(parseInt(e.target.value), this.props.plates)
   }
-  
 
   render() {
     return (
@@ -34,6 +35,7 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
+            <NewDishForm/>
           </div>
         </div>
       </div>
