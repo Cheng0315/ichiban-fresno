@@ -12,7 +12,7 @@ import '../css/menu.css';
 
 class Menu extends Component {
 
-  constructor()  {
+  /*constructor()  {
     super();
     this.state = {
       selectedFile: {}
@@ -24,7 +24,7 @@ class Menu extends Component {
     this.setState({
       selectedFile: e.target.files[0]
     })
-  }
+  }*/
   
   componentDidMount() {
     this.props.fetchPlates();
@@ -50,7 +50,7 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
-            <NewPlateForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile} history={this.props.history}/>
+            <NewPlateForm/>
           </div>
         </div>
       </div>

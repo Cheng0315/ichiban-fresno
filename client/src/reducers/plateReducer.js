@@ -3,7 +3,8 @@ import Auth from '../modules/Auth';
 const initialState = {
   plates: [],
   sortedPlates: [],
-  auth: !!sessionStorage.getItem('token')
+  auth: !!sessionStorage.getItem('token'),
+  selectedFile: null
 }
 
 export default function plateReducer(state = initialState, action) {
@@ -16,6 +17,8 @@ export default function plateReducer(state = initialState, action) {
       return {...state, sortedPlates: action.payload}
     case 'UPDATE_AUTH': 
       return {...state, auth: action.payload}
+    case 'UPLOAD_IMG':
+      return {...state, selectedFile: action.payload}
     case 'NEW_PLATE':
       return {
         ...state, 

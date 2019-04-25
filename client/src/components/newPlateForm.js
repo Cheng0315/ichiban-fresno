@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import createNewPlate from '../actions/createNewPlates'
+import uploadImg from '../actions/uploadImg'
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -83,7 +84,7 @@ class NewPlateForm extends Component {
               <option value="10" >Side Orders</option>
               <option value="11">Beverages</option>
             </select>
-            <input type="file" className='upload-img' onChange={this.props.fileSelectedHandler} required/>
+            <input type="file" className='upload-img' onChange={this.props.uploadImg} required/>
             <Button variant="primary" className='btn-block' type="submit">
               Create Dish
             </Button>
@@ -94,4 +95,8 @@ class NewPlateForm extends Component {
   }
 }
 
-export default connect(null, {createNewPlate})(NewPlateForm)
+const mapStateToProps = state => ({
+  selectedFile: state.plates.selectedFile
+})
+
+export default connect(mapStateToProps, {createNewPlate, uploadImg})(NewPlateForm)
