@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router';
+import createNewPlate from '../actions/fetchNewPlates'
+import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -26,8 +27,7 @@ class NewDishForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    let fd = new FormData();
-    
+    const fd = new FormData();
     const name = e.target.elements.name.value; 
     const price= e.target.elements.price.value;
     const description= e.target.description.value;
@@ -35,25 +35,15 @@ class NewDishForm extends Component {
     const outside = e.target.elements.out.value;
     const category_id = e.target.elements.category_id.value;
 
-    fd.append('image', this.props.selectedFile, this.props.selectedFile.name)
-    fd.append('plate[name]', name)
-    fd.append('plate[price]', price)
-    fd.append('plate[in]', inside)
-    fd.append('plate[out]', outside)
-    fd.append('plate[category_id]', category_id)
-    fd.append('plate[description]', description)
+    fd.append('image', this.props.selectedFile, this.props.selectedFile.name);
+    fd.append('plate[name]', name);
+    fd.append('plate[price]', price);
+    fd.append('plate[in]', inside);
+    fd.append('plate[out]', outside);
+    fd.append('plate[category_id]', category_id);
+    fd.append('plate[description]', description);
 
-    fetch('/api/create_plate', {
-      method: 'post',
-      body: fd,
-      headers: {
-        'token': sessionStorage.getItem('token'),
-        'Authorization': `Token ${sessionStorage.getItem('token')}`
-      },
-    })
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
+    this.props.createNewPlate(fd, this.handleClose);
   }
 
   render() {
@@ -104,4 +94,4 @@ class NewDishForm extends Component {
   }
 }
 
-export default NewDishForm 
+export default connect(null, {createNewPlate})(NewDishForm)

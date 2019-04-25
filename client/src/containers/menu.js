@@ -50,7 +50,7 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
-            <NewDishForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile}/>
+            <NewDishForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile} history={this.props.history}/>
           </div>
         </div>
       </div>

@@ -21,10 +21,8 @@ class PlatesController < ApiController
     end
 
     if @plate.save
-      render json: {
-        message: 'ok',
-        plate: @plate
-      }
+      @plates = Plate.all
+      render json: @plates
     else
       render json: { msg: 'Could not create plate'}
     end
