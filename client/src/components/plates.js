@@ -28,6 +28,9 @@ class Plates extends Component {
 
   render() {
     const plates = this.props.sortedPlates
+    const hasContent = (content) => {
+      return !!content
+    }
 
     return (
       plates.map(plate => 
@@ -44,9 +47,9 @@ class Plates extends Component {
                 </div>
                 <EditPlateForm plateId={plate.id}/>
               </div>
-              <div>{plate.description}</div>
-              <div>{plate.in}</div>
-              <div>{plate.out}</div>
+              {hasContent(plate.description) ? (<div>{plate.description}</div>) : ('')}
+              {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
+              {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
             </div>
           </div>
           <Modal show={this.state.show} onHide={this.handleImageHide} className='img-modal'>

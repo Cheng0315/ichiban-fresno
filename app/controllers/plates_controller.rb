@@ -12,14 +12,6 @@ class PlatesController < ApiController
     @plate.admin = current_user
     @plate.image.attach(params[:image])
 
-    if !params[:plate][:in].empty?
-      @plate.in = "In: #{params[:plate][:in]}"
-    end
-    
-    if !params[:plate][:out].empty?
-      @plate.out = "Out: #{params[:plate][:out]}"
-    end
-
     if @plate.save
       @plates = Plate.all
       render json: @plates
@@ -31,14 +23,6 @@ class PlatesController < ApiController
   def update
     @plate = Plate.find(params[:plate][:id].to_i)
     @plate.image.attach(params[:image])
-
-    if !params[:plate][:in].empty?
-      @plate.in = "In: #{params[:plate][:in]}"
-    end
-    
-    if !params[:plate][:out].empty?
-      @plate.out = "Out: #{params[:plate][:out]}"
-    end
 
     if @plate.update(plate_params)
       @plates = Plate.all

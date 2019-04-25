@@ -117,6 +117,9 @@ class EditPlateForm extends Component {
             <Button variant="primary" className='btn-block' type="submit">
               Update Dish
             </Button>
+            <Button variant="danger" className='btn-block'>
+              Delete This Dish
+            </Button>
         </Form>
         </Modal>
       </React.Fragment>
