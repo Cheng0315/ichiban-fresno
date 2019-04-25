@@ -28,6 +28,10 @@ class PlatesController < ApiController
     end
   end
 
+  def update
+    binding.pry
+  end
+
   private
 
   def plate_params

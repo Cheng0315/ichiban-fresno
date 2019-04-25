@@ -24,7 +24,6 @@ class Menu extends Component {
     this.setState({
       selectedFile: e.target.files[0]
     })
-    console.log(this.state.selectedFile)
   }
   
   componentDidMount() {

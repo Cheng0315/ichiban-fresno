@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import createNewPlate from '../actions/createNewPlates'
+import updatePlates from '../actions/updatePlates'
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -62,14 +62,16 @@ class EditPlateForm extends Component {
     const category_id = e.target.elements.category_id.value;
 
     fd.append('image', this.props.selectedFile, this.props.selectedFile.name);
+    fd.append('plate[id]', this.props.plateId);
     fd.append('plate[name]', name);
     fd.append('plate[price]', price);
     fd.append('plate[in]', inside);
     fd.append('plate[out]', outside);
     fd.append('plate[category_id]', category_id);
     fd.append('plate[description]', description);
-
-    this.props.createNewPlate(fd, this.handleClose);
+    console.log(this.state.selectedFile)
+    console.log(name)
+    /*this.props.editPlate(fd, this.handleClose);*/
   }
 
   render() {
@@ -85,19 +87,19 @@ class EditPlateForm extends Component {
         <Form onSubmit={this.handleSubmit} className='container'>
             <h1>Edit Dish</h1>
             <Form.Group controlId="plate-name">
-              <Form.Control type="text" value={this.state.name} name='name' ref='name' onChange={this.handleInputChange} required/>
+              <Form.Control type="text" value={this.state.name} name='name' placeholder="name" ref='name' onChange={this.handleInputChange} required/>
             </Form.Group>
             <Form.Group controlId="plate-description">
-              <Form.Control type="text" value={this.state.description} name='description' ref='description' onChange={this.handleInputChange}/>
+              <Form.Control type="text" value={this.state.description} name='description' placeholder="description" ref='description' onChange={this.handleInputChange}/>
             </Form.Group>
             <Form.Group controlId="plate-in">
-              <Form.Control type="text" value={this.state.in} name='in' ref='in' onChange={this.handleInputChange}/>
+              <Form.Control type="text" value={this.state.in} name='in' placeholder="in" ref='in' onChange={this.handleInputChange}/>
             </Form.Group>
             <Form.Group controlId="plate-out">
-              <Form.Control type="text" value={this.state.out} name='out' ref='out' onChange={this.handleInputChange}/>
+              <Form.Control type="text" value={this.state.out} name='out' placeholder="out" ref='out' onChange={this.handleInputChange}/>
             </Form.Group>
             <Form.Group controlId="plate-price">
-              <Form.Control type="number" value={this.state.price} step='0.01' name='price' ref='price' onChange={this.handleInputChange} required/>
+              <Form.Control type="number" value={this.state.price} step='0.01' name='price' placeholder="price" ref='price' onChange={this.handleInputChange} required/>
             </Form.Group>
             <select className="form-control" name='category_id'>
               <option value="1">Teriyaki Bowl</option>
