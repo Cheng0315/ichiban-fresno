@@ -24,6 +24,8 @@
 }
 
 .plate-name {
+  padding-bottom: 0;
+  margin-bottom: 0;
   flex-basis: 85%;
   white-space: nowrap;
   overflow: hidden;
@@ -51,7 +53,7 @@
 
 .edit-plates {
   margin-left: 10px;
-  color: #2a84dd;
+  color: #0071eb;
 }
 
 .modal-content img {

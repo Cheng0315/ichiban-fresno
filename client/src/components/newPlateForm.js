@@ -60,16 +60,16 @@ class NewPlateForm extends Component {
               <Form.Control type="text" placeholder="Dish's name" name='name' ref='name' required/>
             </Form.Group>
             <Form.Group controlId="plate-description">
-              <Form.Control type="text" placeholder="Description" name='description' ref='description'/>
+              <Form.Control as="textarea" rows="4" placeholder="Description" name='description' ref='description'/>
+            </Form.Group>
+            <Form.Group controlId="plate-price">
+              <Form.Control type="number" step='0.01' placeholder="Price" name='price' ref='price' required/>
             </Form.Group>
             <Form.Group controlId="plate-in">
               <Form.Control type="text" placeholder="In" name='in' ref='in'/>
             </Form.Group>
             <Form.Group controlId="plate-out">
               <Form.Control type="text" placeholder="Out" name='out' ref='out'/>
-            </Form.Group>
-            <Form.Group controlId="plate-price">
-              <Form.Control type="number" step='0.01' placeholder="Price" name='price' ref='price' required/>
             </Form.Group>
             <select className="form-control" name='category_id'>
               <option value="1">Teriyaki Bowl</option>
