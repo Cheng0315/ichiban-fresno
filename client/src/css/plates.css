@@ -67,15 +67,15 @@
   background-color: black;
 }
 
-.new-plate-modal form{
+.new-plate-modal form, .edit-plate-modal form{
   margin-bottom: 15px;
 }
 
-.new-plate-modal .upload-img {
+.new-plate-modal .upload-img, .edit-plate-modal .upload-img {
   margin: 15px 0 15px;
 }
 
-.new-plate-modal h1{
+.new-plate-modal h1, .edit-plate-modal h1{
   margin-top: 7px;
   text-align: center;
 }

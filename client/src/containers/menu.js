@@ -7,6 +7,7 @@ import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
 import NewPlateForm from '../components/newPlateForm';
+import EditPlateForm from '../components/editPlateForm'
 import '../css/menu.css';
 
 class Menu extends Component {
