@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../css/navBar.css';
@@ -41,10 +42,10 @@ class NavBar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link className='nav-link' href="/">Home</Nav.Link>
-            <Nav.Link className='nav-link' href="/#menu">Menu</Nav.Link>
-            <Nav.Link className='nav-link' href="/#opening-hours">Opening Hours</Nav.Link>
-            <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
-            <Nav.Link className='nav-link' href="/#contact-us">Contact Us</Nav.Link>
+            <AnchorLink className='nav-link' href='#menu'>Menu</AnchorLink>
+            <AnchorLink className='nav-link' href='#opening-hours'>Opening Hours</AnchorLink>
+            <AnchorLink className='nav-link' href='#about-us'>About Us</AnchorLink>
+            <AnchorLink className='nav-link' href='#contact-us'>Contact Us</AnchorLink>
             {logOut}
           </Nav>
         </Navbar.Collapse>
