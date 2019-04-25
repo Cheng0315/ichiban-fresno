@@ -11,6 +11,15 @@ class PlatesController < ApiController
     @plate = Plate.new(plate_params)
     @plate.admin = current_user
     @plate.image.attach(params[:image])
+
+    if !params[:plate][:in].empty?
+      @plate.in = "In: #{params[:plate][:in]}"
+    end
+    
+    if !params[:plate][:out].empty?
+      @plate.out = "Out: #{params[:plate][:out]}"
+    end
+
     if @plate.save
       render json: {
         message: 'ok',

@@ -29,9 +29,6 @@ class Plates extends Component {
   render() {
     let editIcon = '';
     const plates = this.props.sortedPlates
-    const hasContent = (content) => {
-      return !!content
-    }
 
     if (this.props.auth) {
       editIcon = <h6><span className='edit-plates'><FontAwesomeIcon icon="edit"/></span></h6>
@@ -52,9 +49,9 @@ class Plates extends Component {
                 </div>
                 {editIcon}
               </div>
-              {hasContent(plate.description) ? (<div>{plate.description}</div>) : ('')}
-              {hasContent(plate.in) ? (<div>In: {plate.in}</div>) : ('')}
-              {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
+              <div>{plate.description}</div>
+              <div>{plate.in}</div>
+              <div>{plate.out}</div>
             </div>
           </div>
           <Modal show={this.state.show} onHide={this.handleHide}>

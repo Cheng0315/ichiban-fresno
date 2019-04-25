@@ -93,7 +93,7 @@ class NewDishForm extends Component {
               <option value="10" >Side Orders</option>
               <option value="11">Beverages</option>
             </select>
-            <input type="file" onChange={this.props.fileSelectedHandler}/>
+            <input type="file" onChange={this.props.fileSelectedHandler} required/>
             <Button variant="primary" className='btn-block' type="submit">
               Create Dish
             </Button>
