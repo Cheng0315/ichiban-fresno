@@ -58,15 +58,15 @@ class NewDishForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='add-new-dish'>
         <Button variant="primary" onClick={this.handleShow}>
-          Add A New Dish
+          Add New Dish
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Form onSubmit={this.handleSubmit}>
-            <h1>Add A New Dish</h1>
+            <h1>Add New Dish</h1>
             <Form.Group controlId="plate-name">
-              <Form.Control type="text" placeholder="Plate's name" name='name' ref='name'/>
+              <Form.Control type="text" placeholder="Plate's name" name='name' ref='name' required/>
             </Form.Group>
             <Form.Group controlId="plate-description">
               <Form.Control type="text" placeholder="Description" name='description' ref='description'/>
@@ -78,7 +78,7 @@ class NewDishForm extends Component {
               <Form.Control type="text" placeholder="Out" name='out' ref='out'/>
             </Form.Group>
             <Form.Group controlId="plate-price">
-              <Form.Control type="number" step='0.01' placeholder="Price" name='price' ref='price'/>
+              <Form.Control type="number" step='0.01' placeholder="Price" name='price' ref='price' required/>
             </Form.Group>
             <select className="form-control" name='category_id'>
               <option value="1">Teriyaki Bowl</option>

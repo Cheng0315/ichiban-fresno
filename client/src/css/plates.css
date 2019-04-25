@@ -81,10 +81,20 @@
   padding-top: 30px;
 }
 
+.add-new-dish {
+  display: flex;
+  justify-content: center;
+}
+
+.add-new-dish button{
+  margin-top: 35px;
+  width: 250px !important;
+}
+
 
 @media (max-width: 375px) {
   .menu-content{
-    padding: 55px 35px 0 35px !important;
+    padding: 55px 35px 55px 35px !important;
   }
 }
 
