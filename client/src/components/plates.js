@@ -54,7 +54,7 @@ class Plates extends Component {
               <div>{plate.out}</div>
             </div>
           </div>
-          <Modal show={this.state.show} onHide={this.handleHide}>
+          <Modal show={this.state.show} onHide={this.handleHide} className='img-modal'>
             <img src={this.state.imageUrl}/>
           </Modal>
           < ResponsiveHR plateId={plate.id} plates={this.props.sortedPlates} notLastItem={this.props.notLastItem}/>

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import createNewPlate from '../actions/fetchNewPlates'
+import createNewPlate from '../actions/createNewPlates'
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-class NewDishForm extends Component {
+class NewPlateForm extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -52,11 +52,11 @@ class NewDishForm extends Component {
         <Button variant="primary" onClick={this.handleShow}>
           Add New Dish
         </Button>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Form onSubmit={this.handleSubmit}>
+        <Modal show={this.state.show} onHide={this.handleClose} className='new-plate-modal'>
+          <Form onSubmit={this.handleSubmit} className='container'>
             <h1>Add New Dish</h1>
             <Form.Group controlId="plate-name">
-              <Form.Control type="text" placeholder="Plate's name" name='name' ref='name' required/>
+              <Form.Control type="text" placeholder="Dish's name" name='name' ref='name' required/>
             </Form.Group>
             <Form.Group controlId="plate-description">
               <Form.Control type="text" placeholder="Description" name='description' ref='description'/>
@@ -83,7 +83,7 @@ class NewDishForm extends Component {
               <option value="10" >Side Orders</option>
               <option value="11">Beverages</option>
             </select>
-            <input type="file" onChange={this.props.fileSelectedHandler} required/>
+            <input type="file" className='upload-img' onChange={this.props.fileSelectedHandler} required/>
             <Button variant="primary" className='btn-block' type="submit">
               Create Dish
             </Button>
@@ -94,4 +94,4 @@ class NewDishForm extends Component {
   }
 }
 
-export default connect(null, {createNewPlate})(NewDishForm)
+export default connect(null, {createNewPlate})(NewPlateForm)

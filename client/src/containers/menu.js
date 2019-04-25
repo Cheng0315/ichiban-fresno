@@ -6,7 +6,7 @@ import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
-import NewDishForm from '../components/newDishForm';
+import NewPlateForm from '../components/newPlateForm';
 import '../css/menu.css';
 
 class Menu extends Component {
@@ -50,7 +50,7 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
-            <NewDishForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile} history={this.props.history}/>
+            <NewPlateForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile} history={this.props.history}/>
           </div>
         </div>
       </div>
