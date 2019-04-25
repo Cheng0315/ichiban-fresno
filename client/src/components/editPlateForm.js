@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import updatePlates from '../actions/updatePlates'
 import { connect } from 'react-redux';
+import uploadImg  from '../actions/uploadImg'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -35,11 +36,11 @@ class EditPlateForm extends Component {
 
     this.setState({ 
       show: true,
-      name: plate.name,
-      description: plate.description,
-      in: plate.in,
-      out: plate.our,
-      price: plate.price
+      name: (!!plate.name ? plate.name : ''),
+      description: (!!plate.description ? plate.description : ''),
+      in: (!!plate.in ? plate.in : ''),
+      out: (!!plate.our ? plate.in : ''),
+      price: (!!plate.price ? plate.price : '')
     });
   }
 
@@ -60,7 +61,7 @@ class EditPlateForm extends Component {
     const inside = e.target.elements.in.value;
     const outside = e.target.elements.out.value;
     const category_id = e.target.elements.category_id.value;
-
+ 
     fd.append('image', this.props.selectedFile, this.props.selectedFile.name);
     fd.append('plate[id]', this.props.plateId);
     fd.append('plate[name]', name);
@@ -69,9 +70,7 @@ class EditPlateForm extends Component {
     fd.append('plate[out]', outside);
     fd.append('plate[category_id]', category_id);
     fd.append('plate[description]', description);
-    console.log(this.state.selectedFile)
-    console.log(name)
-    /*this.props.editPlate(fd, this.handleClose);*/
+    this.props.updatePlates(fd, this.handleClose, category_id);
   }
 
   render() {
@@ -114,7 +113,7 @@ class EditPlateForm extends Component {
               <option value="10" >Side Orders</option>
               <option value="11">Beverages</option>
             </select>
-            <input type="file" className='upload-img' onChange={this.props.fileSelectedHandler} required/>
+            <input type="file" className='upload-img' onChange={this.props.uploadImg} required/>
             <Button variant="primary" className='btn-block' type="submit">
               Update Dish
             </Button>
@@ -127,7 +126,8 @@ class EditPlateForm extends Component {
 
 const mapStateToProps = state => ({
   plates: state.plates.plates,
-  auth: state.plates.auth
+  auth: state.plates.auth,
+  selectedFile: state.plates.selectedFile
 })
 
-export default connect(mapStateToProps)(EditPlateForm)
+export default connect(mapStateToProps, {uploadImg, updatePlates})(EditPlateForm)

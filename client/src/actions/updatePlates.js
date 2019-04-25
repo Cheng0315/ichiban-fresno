@@ -1,6 +1,7 @@
-const updatePlates = (fd, closeModal) => dispatch => {
-  fetch('/api/edit_plate', {
-    method: 'patch',
+const updatePlates = (fd, closeModal, categoryId) => dispatch => {
+
+  fetch('/api/update_plates', {
+    method: 'PATCH',
     body: fd,
     headers: {
       'token': sessionStorage.getItem('token'),
@@ -12,9 +13,9 @@ const updatePlates = (fd, closeModal) => dispatch => {
     closeModal();
     dispatch({
       type: 'UPDATE_PLATES',
-      payload: platesData,
-      lastPlateCategoryId: platesData[Object.keys(platesData)[Object.keys(platesData).length - 1]].category_id
-  })
+      payload: platesData, 
+      updatedPlateCategoryId: categoryId
+    })
   })
   .catch(error => console.log(error))
 }

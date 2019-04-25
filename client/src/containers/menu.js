@@ -12,20 +12,6 @@ import '../css/menu.css';
 
 class Menu extends Component {
 
-  /*constructor()  {
-    super();
-    this.state = {
-      selectedFile: {}
-    }
-    this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
-  }
-
-  fileSelectedHandler = (e) => {
-    this.setState({
-      selectedFile: e.target.files[0]
-    })
-  }*/
-  
   componentDidMount() {
     this.props.fetchPlates();
   }

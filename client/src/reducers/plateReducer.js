@@ -15,14 +15,12 @@ export default function plateReducer(state = initialState, action) {
       return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id == action.lastPlateCategoryId})}
     case 'SORT_PLATES':
       return {...state, sortedPlates: action.payload}
+    case 'UPDATE_PLATES':
+      return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id == action.updatedPlateCategoryId})}
     case 'UPDATE_AUTH': 
       return {...state, auth: action.payload}
     case 'UPLOAD_IMG':
       return {...state, selectedFile: action.payload}
-    case 'NEW_PLATE':
-      return {
-        ...state, 
-        plates: [...state.plates, action.platesData]}
     default: 
       return state
   }
