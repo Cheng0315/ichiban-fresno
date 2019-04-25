@@ -8,9 +8,9 @@ class PlatesController < ApiController
   end
 
   def create
-    @plate = Plate.new(plates_params)
+    @plate = Plate.new(plate_params)
     @plate.admin = current_user
-
+    @plate.image.attach(params[:image])
     if @plate.save
       render json: {
         message: 'ok',
@@ -23,7 +23,7 @@ class PlatesController < ApiController
 
   private
 
-  def plates_params
-    params.require(plate).permit(:name, :description, :in, :out, :price, :category_id)
+  def plate_params
+    params.require(:plate).permit(:name, :description, :in, :out, :price, :category_id, :image)
   end
 end

@@ -9,7 +9,7 @@ const initialState = {
 export default function plateReducer(state = initialState, action) {
   switch(action.type){
     case 'FETCH_PLATES':
-      return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id === 1})}
+      return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id == 1})}
     case 'SORT_PLATES':
       return {...state, sortedPlates: action.payload}
     case 'UPDATE_AUTH': 

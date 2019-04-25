@@ -10,6 +10,21 @@ import NewDishForm from '../components/newDishForm';
 import '../css/menu.css';
 
 class Menu extends Component {
+
+  constructor()  {
+    super();
+    this.state = {
+      selectedFile: {}
+    }
+    this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
+  }
+
+  fileSelectedHandler = (e) => {
+    this.setState({
+      selectedFile: e.target.files[0]
+    })
+    console.log(this.state.selectedFile)
+  }
   
   componentDidMount() {
     this.props.fetchPlates();
@@ -35,7 +50,7 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
-            <NewDishForm/>
+            <NewDishForm fileSelectedHandler={this.fileSelectedHandler} selectedFile={this.state.selectedFile}/>
           </div>
         </div>
       </div>

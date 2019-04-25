@@ -86,6 +86,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.9)
+    ngrok-tunnel (2.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
@@ -156,6 +157,7 @@ DEPENDENCIES
   byebug
   dotenv-rails
   listen (>= 3.0.5, < 3.2)
+  ngrok-tunnel
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)

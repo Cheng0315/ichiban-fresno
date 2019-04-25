@@ -12,7 +12,7 @@ class NewDishForm extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false,
+      show: false
     };
   }
 
@@ -26,12 +26,29 @@ class NewDishForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const inputs = {...{}, name: e.target.elements.name.value, price: e.target.elements.price.value}
-    fetch('/api/sign_in', {
+    let fd = new FormData();
+    
+    const name = e.target.elements.name.value; 
+    const price= e.target.elements.price.value;
+    const description= e.target.description.value;
+    const inside = e.target.elements.in.value;
+    const outside = e.target.elements.out.value;
+    const category_id = e.target.elements.category_id.value;
+
+    fd.append('image', this.props.selectedFile, this.props.selectedFile.name)
+    fd.append('plate[name]', name)
+    fd.append('plate[price]', price)
+    fd.append('plate[in]', inside)
+    fd.append('plate[out]', outside)
+    fd.append('plate[category_id]', category_id)
+    fd.append('plate[description]', description)
+
+    fetch('/api/create_plate', {
       method: 'post',
-      body: JSON.stringify(data),
+      body: fd,
       headers: {
-        'Content-Type': 'application/json'
+        'token': sessionStorage.getItem('token'),
+        'Authorization': `Token ${sessionStorage.getItem('token')}`
       },
     })
     .then(response => response.json())
@@ -63,7 +80,7 @@ class NewDishForm extends Component {
             <Form.Group controlId="plate-price">
               <Form.Control type="number" step='0.01' placeholder="Price" name='price' ref='price'/>
             </Form.Group>
-            <select className="form-control">
+            <select className="form-control" name='category_id'>
               <option value="1">Teriyaki Bowl</option>
               <option value="2" >Ichiban Rolls & Sushi</option>
               <option value="3">Udon</option>
@@ -76,7 +93,7 @@ class NewDishForm extends Component {
               <option value="10" >Side Orders</option>
               <option value="11">Beverages</option>
             </select>
-            <input type="file" />
+            <input type="file" onChange={this.props.fileSelectedHandler}/>
             <Button variant="primary" className='btn-block' type="submit">
               Create Dish
             </Button>
