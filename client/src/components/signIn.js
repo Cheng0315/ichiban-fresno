@@ -18,7 +18,7 @@ class SignIn extends Component {
         body: JSON.stringify(inputs),
         headers: {
           'Content-Type': 'application/json'
-        },
+        }
       })
       .then(response => response.json())
       .then(response => {

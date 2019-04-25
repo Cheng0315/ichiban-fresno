@@ -32,6 +32,14 @@ class PlatesController < ApiController
     end
   end
 
+  def destroy
+    @plate = Plate.find(params[:id].to_i)
+    @plate.destroy
+    @plates = Plate.all
+    
+    render json: @plates
+  end
+
   private
 
   def plate_params

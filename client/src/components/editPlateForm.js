@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import updatePlates from '../actions/updatePlates'
 import { connect } from 'react-redux';
+import deletePlates from '../actions/deletePlates'
 import uploadImg  from '../actions/uploadImg'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -44,7 +45,14 @@ class EditPlateForm extends Component {
     });
   }
 
+  findCategoryId = () => {
+    return this.props.plates.find(plate => plate.id == this.props.plateId).category_id;
+  }
 
+  handlePlateDelete = () => {
+    const categoryId = this.findCategoryId()
+    this.props.deletePlates(this.handleClose, this.props.plateId, categoryId)
+  }
 
   handleInputChange(e) {
     this.setState({
@@ -115,9 +123,9 @@ class EditPlateForm extends Component {
             </select>
             <input type="file" className='upload-img' onChange={this.props.uploadImg} required/>
             <Button variant="primary" className='btn-block' type="submit">
-              Update Dish
+              Update
             </Button>
-            <Button variant="danger" className='btn-block'>
+            <Button variant="danger" className='btn-block' onClick={this.handlePlateDelete}>
               Delete This Dish
             </Button>
         </Form>
@@ -133,4 +141,4 @@ const mapStateToProps = state => ({
   selectedFile: state.plates.selectedFile
 })
 
-export default connect(mapStateToProps, {uploadImg, updatePlates})(EditPlateForm)
+export default connect(mapStateToProps, {uploadImg, updatePlates, deletePlates})(EditPlateForm)

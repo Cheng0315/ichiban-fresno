@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   delete '/api/sign_out' => 'sessions#destroy'
   post '/api/create_plate' => 'plates#create'
   patch '/api/update_plates' => 'plates#update'
+  delete '/api/delete_plates' => 'plates#destroy'
 end
