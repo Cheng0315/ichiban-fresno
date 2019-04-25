@@ -21,12 +21,6 @@ class Menu extends Component {
   }
 
   render() {
-    let newPlateForm = ''
-
-    if (this.props.auth) {
-      newPlateForm = <NewPlateForm/>
-    }
-
     return (
       <div id="menu">
         <h2 className="text-center">Browse Our Menu</h2>
@@ -42,7 +36,6 @@ class Menu extends Component {
                 <Plates notLastItem={false} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 1})}/>
               </div>
             </div>
-            {newPlateForm}
           </div>
         </div>
       </div>

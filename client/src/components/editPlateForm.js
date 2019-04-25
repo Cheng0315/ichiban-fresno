@@ -84,7 +84,7 @@ class EditPlateForm extends Component {
   render() {
     let editIcon = '';
     if (this.props.auth) {
-      editIcon = <a href='/' onClick={this.handleShow}><h6><span className='edit-plates'><FontAwesomeIcon icon="edit"/></span></h6></a>
+      editIcon = <a href='/' onClick={this.handleShow}><h6><span className='edit-plates'><FontAwesomeIcon icon="pencil-alt"/></span></h6></a>
     }
 
     return (

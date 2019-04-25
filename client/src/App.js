@@ -6,10 +6,10 @@ import HomePageContainer from './containers/homePageContainer'
 import SignIn from './components/signIn';
 import Auth from './modules/Auth';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPhone, faHome, faEnvelope, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faHome, faEnvelope, faEdit, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
-library.add(faPhone, faHome, faEnvelope, faEdit)
+library.add(faPhone, faHome, faEnvelope, faEdit, faPencilAlt)
 
 class App extends Component {
   render() {

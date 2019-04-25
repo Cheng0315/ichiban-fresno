@@ -53,7 +53,7 @@
 
 .edit-plates {
   margin-left: 10px;
-  color: #0071eb;
+  color: #007bff;
 }
 
 .modal-content img {
@@ -100,16 +100,13 @@
   padding-top: 30px;
 }
 
-.add-new-dish {
-  display: flex;
-  justify-content: center;
+.add-new-dish button {
+  color: white !important;
 }
 
-.add-new-dish button{
-  margin-top: 35px;
-  width: 250px !important;
+.add-new-dish button:hover {
+  color: white !important;
 }
-
 
 @media (max-width: 375px) {
   .menu-content{
