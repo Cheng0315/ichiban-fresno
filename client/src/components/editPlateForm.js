@@ -90,7 +90,7 @@ class EditPlateForm extends Component {
     return (
       <React.Fragment>
         {editIcon}
-        <Modal show={this.state.show} onHide={this.handleClose} className='edit-plate-modal'>
+        <Modal show={this.state.show} onHide={this.handleClose} className='edit-plate-modal' centered>
         <Form onSubmit={this.handleSubmit} className='container'>
             <h1>Edit Dish</h1>
             <Form.Group controlId="plate-name">

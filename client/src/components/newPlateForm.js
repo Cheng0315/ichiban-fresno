@@ -53,7 +53,7 @@ class NewPlateForm extends Component {
         <Button variant="primary" onClick={this.handleShow}>
           Add New Dish
         </Button>
-        <Modal show={this.state.show} onHide={this.handleClose} className='new-plate-modal'>
+        <Modal show={this.state.show} onHide={this.handleClose} className='new-plate-modal' centered>
           <Form onSubmit={this.handleSubmit} className='container'>
             <h1>Add New Dish</h1>
             <Form.Group controlId="plate-name">

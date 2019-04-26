@@ -52,7 +52,7 @@ class Plates extends Component {
               {hasContent(plate.out) ? (<div>Out: {plate.out}</div>) : ('')}
             </div>
           </div>
-          <Modal show={this.state.show} onHide={this.handleImageHide} className='img-modal'>
+          <Modal show={this.state.show} onHide={this.handleImageHide} className='img-modal' centered>
             <img src={this.state.imageUrl}/>
           </Modal>
           < ResponsiveHR plateId={plate.id} plates={this.props.sortedPlates} notLastItem={this.props.notLastItem}/>
