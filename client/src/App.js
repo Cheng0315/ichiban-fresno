@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './store'
 import { Provider } from 'react-redux'
 import HomePageContainer from './containers/homePageContainer'
@@ -17,10 +17,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Route exact path='/' component={HomePageContainer}/>
-          <Route exact path='/admin' component={SignIn}/>
-          <Route exact path='/dishes/:id' component={PlateShowPage}/>
+          <Switch>
+            <Route exact path='/' component={HomePageContainer}/>
+            <Route exact path='/admin' component={SignIn}/>
+            <Route exact path='/dishes/:id' component={PlateShowPage}/>
+          </Switch>
         </Router>
+        
       </Provider>
     )
   }

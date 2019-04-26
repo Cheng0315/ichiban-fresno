@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post '/api/create_plate' => 'plates#create'
   patch '/api/update_plates' => 'plates#update'
   delete '/api/delete_plates' => 'plates#destroy'
+  get '/api/plates/:id' => 'plates#show'
 end

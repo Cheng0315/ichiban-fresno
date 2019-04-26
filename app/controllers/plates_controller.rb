@@ -1,5 +1,5 @@
 class PlatesController < ApiController
-  before_action :require_login, except: [:index]
+  before_action :require_login, except: [:index, :show]
 
   def index 
     @plates = Plate.all
@@ -18,6 +18,11 @@ class PlatesController < ApiController
     else
       render json: { msg: 'Could not create plate'}
     end
+  end
+
+  def show
+    @plate = Plate.find(params[:id].to_i)
+    render json: @plate
   end
 
   def update
