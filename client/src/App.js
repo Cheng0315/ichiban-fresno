@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import store from './store'
-import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
 import SignIn from './components/signIn';
 import HomePage from './containers/homePage';
 import ShowPagePlate from './containers/showPlatePage';
@@ -14,18 +13,26 @@ library.add(faPhone, faHome, faEnvelope, faEdit, faPencilAlt)
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route exact path='/' component={HomePage}/>
-            <Route exact path='/admin' component={SignIn}/>
-            <Route exact path='/dishes/:id' component={ShowPagePlate}/>
-            <Route component={HomePage}/>
-          </Switch>
-        </Router>
-      </Provider>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={HomePage}/>
+          <Route exact path='/admin' render={() => (
+            this.props.auth ? (
+              <Redirect to="/"/>
+            ) : (
+              <SignIn/>
+            )
+          )}/>
+          <Route exact path='/dishes/:id' component={ShowPagePlate}/>
+          <Route component={HomePage}/>
+        </Switch>
+      </Router>
     )
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  auth: state.plates.auth
+})
+
+export default connect(mapStateToProps)(App);
