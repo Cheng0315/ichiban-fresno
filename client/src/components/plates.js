@@ -41,9 +41,7 @@ class Plates extends Component {
             </div>
             <div className='plate-info'>
               <div className='name-and-price'>
-                
                 <h6 className='plate-name'><Link to={'/dishes/' + plate.id}>{plate.name}......................................................................................................</Link></h6>
-                
                 <div className='plate-price'>
                   <h6>${plate.price}</h6>
                 </div>

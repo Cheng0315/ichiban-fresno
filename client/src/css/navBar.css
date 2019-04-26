@@ -9,6 +9,11 @@
   background-color: #131313 !important; 
 }
 
+
+.navbar-nav a:hover {
+  color: rgb(218, 218, 218) !important;
+}
+
 .nav-brand {
   color: white !important;
 }

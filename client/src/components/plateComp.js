@@ -5,8 +5,7 @@ class PlateComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      plate: '',
-      errorOccured: false
+      plate: ''
     }
   }
 
@@ -52,7 +51,6 @@ class PlateComp extends Component {
         </div>
         <div className='col-lg-6 col-md-6'>
           <h6>{this.state.plate.name}</h6>
-          {this.state.errorOccurred ? <h1>Something went wrong!</h1> : 'yay'}
           <div>${this.state.plate.price}</div>
           {hasContent(this.state.plate.description) ? (<h6>{this.state.plate.description}</h6>) : ('')}
           {hasContent(this.state.plate.in) ? (<div>In: {this.state.plate.in}</div>) : ('')}

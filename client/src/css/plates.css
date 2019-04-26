@@ -21,6 +21,7 @@
 
 .name-and-price {
   display: flex; 
+  justify-content: space-between;
 }
 
 .plate-name a {
@@ -31,7 +32,7 @@
 .plate-name {
   padding-bottom: 0;
   margin-bottom: 0;
-  flex-basis: 85%;
+  flex-basis: 95%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
