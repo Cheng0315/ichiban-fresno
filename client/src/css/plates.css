@@ -118,6 +118,15 @@
   .menu-content{
     padding: 55px 35px 55px 35px !important;
   }
+
+  .menu-select-tag {
+    flex-direction: column;
+    height: 90px;
+  }
+
+  .menu-select-tag .btn {
+    margin-top: 7px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -234,7 +243,14 @@
     display: none !important;
   }
 
-  
+  .menu-select-tag .add-new-dish {
+    margin-left: 4px !important;
+  }
+
+  .menu-select-tag .btn {
+    padding-top: 4px;
+    height: 33px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px){

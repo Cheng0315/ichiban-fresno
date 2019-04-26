@@ -20,7 +20,6 @@
   transition: 0.3s;
   font-weight: bolder;
   color: #505356;
-  display:list-item;
 }
 
 .menu-nav button:hover {

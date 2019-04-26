@@ -6,7 +6,6 @@ import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
-import NewPlateForm from '../components/newPlateForm';
 import EditPlateForm from '../components/editPlateForm'
 import '../css/menu.css';
 
@@ -21,11 +20,14 @@ class Menu extends Component {
   }
 
   render() {
+    
+    
     return (
       <div id="menu">
         <h2 className="text-center">Browse Our Menu</h2>
         <div className='menu-inner-container'>
           <MenuSelectTag handleChange={this.handleClick}/>
+          
           <MenuBtns handleClick={this.handleClick}/>
           <div className='menu-content'>
             <div className='list-plates'>

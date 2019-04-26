@@ -12,7 +12,6 @@ class PlateComp extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     const plateId = this.props.match.params.id
-    console.log(plateId)
     fetch(`/api/plates/${plateId}`)
     .then(response => response.json())
     .then(plateData => 

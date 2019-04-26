@@ -20,7 +20,7 @@ const CarouselComponent = () => {
         
         <Carousel.Caption>
           <h1>Welcome to Ichiban Restaurant</h1>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p>Welcome to Ichiban Restaurant Welcome to Ichiban Restaurant</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -39,7 +39,7 @@ const CarouselComponent = () => {
 
         <Carousel.Caption>
         <h1>Welcome to Ichiban Restaurant</h1>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <p>Welcome to Ichiban Restaurant Welcome to Ichiban Restaurant</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
