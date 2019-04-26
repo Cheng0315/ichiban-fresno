@@ -27,13 +27,14 @@ class App extends Component {
               <Route path='/' component={NavBar}/>
             </header>
             <section className="container">
+              <Route exact path='/admin' component={SignIn}/>
               <Route exact path='/' component={CarouselComponent}/>
               <Route exact path='/' component={Menu}/>
+              <Route exact path='/dishes/:id' component={PlateComp}/>
               <Route path='/' component={OpeningHours}/>
               <Route path='/' component={AboutUs}/>
               <Route path='/' component={ContactUs}/>
-              <Route exact path='/admin' component={SignIn}/>
-              <Route exact path='/dishes/:id' component={PlateComp}/>
+              
             </section>
             <footer id='footer'>
               <Route path='/' component={Footer}/>

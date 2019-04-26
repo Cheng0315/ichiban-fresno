@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import plateComp from '../css/plateComp.css'
 
 class PlateComp extends Component {  
   constructor(props) {
@@ -9,7 +10,8 @@ class PlateComp extends Component {
   }
 
   componentDidMount() {
-    const plateId = this.props.plateId
+    window.scrollTo(0, 0);
+    const plateId = this.props.match.params.id
     console.log(plateId)
     fetch(`/api/plates/${plateId}`)
     .then(response => response.json())
@@ -21,14 +23,22 @@ class PlateComp extends Component {
   }
 
   render() {
+    const hasContent = (content) => {
+      return !!content
+    }
+    
     return (
-      <div>
-        <div>{this.state.plate.name}</div>
-        <div>{this.state.plate.price}</div>
-        <div>{this.state.plate.description}</div>
-        <div>{this.state.plate.in}</div>
-        <div>{this.state.plate.out}</div>
-        <div>{this.state.plate.category_id}</div>
+      <div className='plate-comp  row'>
+        <div className='col-lg-6 col-md-6'>
+          <img className='img-fluid' src={this.state.plate.image_url}/>
+        </div>
+        <div className='col-lg-6 col-md-6'>
+          <h4>{this.state.plate.name}</h4>
+          <h6>${this.state.plate.price}</h6>
+          {hasContent(this.state.plate.description) ? (<h6>{this.state.plate.description}</h6>) : ('')}
+          {hasContent(this.state.plate.in) ? (<h6>In: {this.state.plate.in}</h6>) : ('')}
+          {hasContent(this.state.plate.out) ? (<h6>Out: {this.state.plate.out}</h6>) : ('')}
+        </div>
       </div>
     )
   }

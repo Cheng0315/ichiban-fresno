@@ -32,7 +32,7 @@ const ContactUs = () => {
         <div className='col-lg-6 col-md-12 col-sm-12'>
           <h4 className="text-center">Map</h4>
           <iframe width="100%" height="330"
-            src={"https://www.google.com/maps/embed/v1/place?key=" + process.env.REACT_APP_GOOGLE_MAP_API_KEY + "&q=Ichiban,Fresno+CA"}>
+            src={"https://www.google.com/maps/embed/v1/place?key=" + process.env + "&q=Ichiban,Fresno+CA"}>
           </iframe>
         </div>
       </div>
