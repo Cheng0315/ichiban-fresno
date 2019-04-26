@@ -23,6 +23,7 @@ class NavBar extends Component {
     .then(response => {
       sessionStorage.removeItem('token');
       this.props.updateAuth(!!sessionStorage.getItem('token'));
+      this.props.history.push('/');
     })
     .catch(error => console.log(error))
   }

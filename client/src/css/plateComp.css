@@ -1,7 +1,12 @@
 .plate-comp {
-  margin-bottom: 30px;
+  padding-top: 11px;
 }
 
-.plate-comp div{
+.plate-comp img {
+  -webkit-box-shadow: 0 0 10px rgb(175, 173, 173);
+  box-shadow: 0 0 3px rgb(230, 216, 216);
+}
+
+.plate-comp div {
   margin-bottom: 10px;
 }

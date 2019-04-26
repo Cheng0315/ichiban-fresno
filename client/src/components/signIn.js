@@ -8,28 +8,38 @@ import Auth from '../modules/Auth';
 import '../css/signIn.css';
 
 class SignIn extends Component {
+  
+  state = {
+    invalidLoginMsg: ''
+  }
+
+  validateToken = (token) => {
+    if (token){
+      sessionStorage.setItem('token', token);
+      this.props.updateAuth(!!sessionStorage.getItem('token'));
+      this.props.history.push('/');
+    }else {
+      this.setState({
+        invalidLoginMsg: 'Invalid email or password'
+      })
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (e.target.checkValidity()) {
-      const inputs = {...{}, email: e.target.elements.email.value, password: e.target.elements.password.value}
-      fetch('/api/sign_in', {
-        method: 'post',
-        body: JSON.stringify(inputs),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(response => {
-        sessionStorage.setItem('token', response.token);
-        this.props.updateAuth(!!sessionStorage.getItem('token'));
-        this.props.history.push('/');
-      })
-      .catch(error => console.log(error))
-    } else {
-      console.log('Form contains empty field')
-    }
+    const inputs = {...{}, email: e.target.elements.email.value, password: e.target.elements.password.value}
+    fetch('/api/sign_in', {
+      method: 'post',
+      body: JSON.stringify(inputs),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      this.validateToken(response.token)
+    })
+    .catch(error => console.log(error))
   }
 
   render(){
@@ -38,7 +48,8 @@ class SignIn extends Component {
         <div className='sign-in-form'>
           <a href='/'><h1>ICHIBAN</h1></a>
           <h4>Sign in to Ichiban</h4>
-          <Form onSubmit={this.handleSubmit} noValidate>
+          <Form onSubmit={this.handleSubmit}>
+            <div className='invalid-login'>{this.state.invalidLoginMsg}</div>
             <Form.Group controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Email" name='email' ref='email' required/>
             </Form.Group>
