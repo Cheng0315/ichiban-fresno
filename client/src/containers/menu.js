@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import Plates from '../components/plates';
-import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
-import EditPlateForm from '../components/editPlateForm'
 import '../css/menu.css';
 
 class Menu extends Component {
@@ -20,8 +18,6 @@ class Menu extends Component {
   }
 
   render() {
-    
-    
     return (
       <div id="menu">
         <h2 className="text-center">Browse Our Menu</h2>

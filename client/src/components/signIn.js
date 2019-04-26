@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import updateAuth from '../actions/updateAuth'
-import Auth from '../modules/Auth';
 import '../css/signIn.css';
 
 class SignIn extends Component {
@@ -44,7 +42,7 @@ class SignIn extends Component {
 
   render(){
     return ( 
-      <div className='container sign-in'>
+      <div className='sign-in container'>
         <div className='sign-in-form'>
           <a href='/'><h1>ICHIBAN</h1></a>
           <h4>Sign in to Ichiban</h4>

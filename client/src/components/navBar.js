@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -53,7 +52,7 @@ class NavBar extends Component {
     }
 
     return (
-      <Navbar bg="light" expand="lg" className='navbar'>
+      <Navbar bg="light" expand="lg">
         <div className="container">
         <Navbar.Brand className='nav-brand' href="/"><h2>ICHIBAN</h2></Navbar.Brand>
         <Navbar.Toggle className="custom-toggler" aria-controls="basic-navbar-nav" />

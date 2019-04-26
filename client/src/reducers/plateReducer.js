@@ -1,5 +1,3 @@
-import Auth from '../modules/Auth';
-
 const initialState = {
   plates: [],
   sortedPlates: [],

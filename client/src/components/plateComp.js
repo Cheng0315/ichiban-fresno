@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import plateComp from '../css/plateComp.css'
+import '../css/plateComp.css'
 
 class PlateComp extends Component {  
   constructor(props) {
@@ -11,7 +11,7 @@ class PlateComp extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    const plateId = this.props.match.params.id
+    const plateId = this.props.plateId
     fetch(`/api/plates/${plateId}`)
     .then(response => response.json())
     .then(plateData => 
@@ -29,11 +29,11 @@ class PlateComp extends Component {
     return (
       <div className='plate-comp  row'>
         <div className='col-lg-6 col-md-6'>
-          <img className='img-fluid' src={this.state.plate.image_url}/>
+          <img className='img-fluid' src={this.state.plate.image_url} alt={this.state.plate.name}/>
         </div>
         <div className='col-lg-6 col-md-6'>
           <h4>{this.state.plate.name}</h4>
-          <h6>${this.state.plate.price}</h6>
+          <h5>${this.state.plate.price}</h5>
           {hasContent(this.state.plate.description) ? (<h6>{this.state.plate.description}</h6>) : ('')}
           {hasContent(this.state.plate.in) ? (<h6>In: {this.state.plate.in}</h6>) : ('')}
           {hasContent(this.state.plate.out) ? (<h6>Out: {this.state.plate.out}</h6>) : ('')}

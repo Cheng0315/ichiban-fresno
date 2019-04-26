@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ResponsiveHR from './responsiveHR'
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import '../css/plates.css';
 import EditPlateForm from './editPlateForm'
 
@@ -38,7 +37,7 @@ class Plates extends Component {
         <div key={plate.id} className='plate-container fade-in'>
           <div className='plate-content'>
             <div className='plate-img'>
-              <a href='/' name={plate.image_url} onClick={this.handleImageShow}><img src={plate.image_url}/></a>
+              <a href='/' name={plate.image_url} onClick={this.handleImageShow}><img src={plate.image_url} alt={plate.name}/></a>
             </div>
             <div className='plate-info'>
               <div className='name-and-price'>
@@ -56,7 +55,7 @@ class Plates extends Component {
             </div>
           </div>
           <Modal show={this.state.show} onHide={this.handleImageHide} className='img-modal' centered>
-            <img src={this.state.imageUrl}/>
+            <img src={this.state.imageUrl} alt=''/>
           </Modal>
           < ResponsiveHR plateId={plate.id} plates={this.props.sortedPlates} notLastItem={this.props.notLastItem}/>
         </div>
