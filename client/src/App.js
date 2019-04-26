@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store'
 import { Provider } from 'react-redux'
 import HomePageContainer from './containers/homePageContainer'
+import PlateShowPage from './components/plateShowPage'
 import SignIn from './components/signIn';
 import Auth from './modules/Auth';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -18,6 +19,7 @@ class App extends Component {
         <Router>
           <Route exact path='/' component={HomePageContainer}/>
           <Route exact path='/admin' component={SignIn}/>
+          <Route exact path='/dishes/:id' component={PlateShowPage}/>
         </Router>
       </Provider>
     )

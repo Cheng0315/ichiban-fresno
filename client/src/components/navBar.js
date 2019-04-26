@@ -29,10 +29,27 @@ class NavBar extends Component {
 
   render() {
     let logOut = '';
+    let navBar = '';
 
     if (this.props.auth) {
       logOut = <Nav.Link className='nav-link' href="/" onClick={this.handleClick}>Log Out</Nav.Link>;
     } 
+
+    if (window.location.pathname === '/') {
+      navBar = <React.Fragment>
+                 <AnchorLink className='nav-link' href='#menu'>Menu</AnchorLink>
+                 <AnchorLink className='nav-link' href='#opening-hours'>Opening Hours</AnchorLink>
+                 <AnchorLink className='nav-link' href='#about-us'>About Us</AnchorLink>
+                 <AnchorLink className='nav-link' href='#contact-us'>Contact Us</AnchorLink>
+               </React.Fragment>
+    } else {
+      navBar = <React.Fragment>
+                 <Nav.Link className='nav-link' href="/#menu">Menu</Nav.Link>
+                 <Nav.Link className='nav-link' href="/#opening-hours">Opening Hours</Nav.Link>
+                 <Nav.Link className='nav-link' href="/#about-us">About Us</Nav.Link>
+                 <Nav.Link className='nav-link' href="/#contact-us">Contact Us</Nav.Link>
+               </React.Fragment>
+    }
 
     return (
       <Navbar bg="light" expand="lg" className='navbar'>
@@ -42,10 +59,7 @@ class NavBar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link className='nav-link' href="/">Home</Nav.Link>
-            <AnchorLink className='nav-link' href='#menu'>Menu</AnchorLink>
-            <AnchorLink className='nav-link' href='#opening-hours'>Opening Hours</AnchorLink>
-            <AnchorLink className='nav-link' href='#about-us'>About Us</AnchorLink>
-            <AnchorLink className='nav-link' href='#contact-us'>Contact Us</AnchorLink>
+            {navBar}
             {logOut}
           </Nav>
         </Navbar.Collapse>

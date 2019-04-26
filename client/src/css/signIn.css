@@ -17,3 +17,8 @@
   text-align: center;
   margin-bottom: 10px;
 }
+
+.sign-in-form a{
+  color: black;
+  text-decoration: none;
+}

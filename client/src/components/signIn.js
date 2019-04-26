@@ -36,7 +36,7 @@ class SignIn extends Component {
     return ( 
       <div className='container sign-in'>
         <div className='sign-in-form'>
-          <h1>ICHIBAN</h1>
+          <a href='/'><h1>ICHIBAN</h1></a>
           <h4>Sign in to Ichiban</h4>
           <Form onSubmit={this.handleSubmit} noValidate>
             <Form.Group controlId="formBasicEmail">
