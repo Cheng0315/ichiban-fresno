@@ -1,4 +1,5 @@
 const fetchPlates = () => dispatch => {
+  dispatch({type: 'START_ADDING_PLATES'});
   fetch('/api/plates')
     .then(response => response.json())
     .then(platesData => 

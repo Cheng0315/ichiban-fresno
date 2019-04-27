@@ -1,4 +1,5 @@
 const initialState = {
+  loadingPlates: false,
   plates: [],
   sortedPlates: [],
   auth: !!sessionStorage.getItem('token'),
@@ -7,8 +8,10 @@ const initialState = {
 
 export default function plateReducer(state = initialState, action) {
   switch(action.type){
+    case 'START_ADDING_PLATES':
+      return {...state, loadingPlates: true}
     case 'FETCH_PLATES':
-      return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id === 1})}
+      return {...state, loadingPlates: false, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id === 1})}
     case 'FETCH_NEW_PLATES':
       return {...state, plates: action.payload, sortedPlates: action.payload.filter(function(ele){return ele.category_id === action.lastPlateCategoryId})}
     case 'SORT_PLATES':

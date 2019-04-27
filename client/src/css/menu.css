@@ -78,3 +78,7 @@
  animation-fill-mode: forwards;
  animation-duration: 0.4s;
 }
+
+.fetching-data {
+  text-align: center;
+}

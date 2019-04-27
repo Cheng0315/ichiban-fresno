@@ -5,10 +5,10 @@ import SignIn from './components/signIn';
 import HomePage from './containers/homePage';
 import ShowPagePlate from './containers/showPlatePage';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPhone, faHome, faEnvelope, faEdit, faPencilAlt, faGripLinesVertical } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faHome, faEnvelope, faEdit, faPencilAlt, faGripLinesVertical, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
-library.add(faPhone, faHome, faEnvelope, faEdit, faPencilAlt, faGripLinesVertical)
+library.add(faPhone, faHome, faEnvelope, faEdit, faPencilAlt, faGripLinesVertical, faSpinner)
 
 class App extends Component {
   render() {

@@ -5,6 +5,7 @@ import fetchPlates from '../actions/fetchPlates'
 import sortPlates from '../actions/sortPlates'
 import MenuBtns from '../components/menuBtns';
 import MenuSelectTag from '../components/menuSelectTag'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../css/menu.css';
 
 class Menu extends Component {
@@ -18,14 +19,20 @@ class Menu extends Component {
   }
 
   render() {
+    let fetchingData = ''; 
+
+    if (!!this.props.loadingPlates) {
+      fetchingData = <h5 className='fetching-data'><span ><FontAwesomeIcon icon="spinner" className='fa fa-spinner fa-spin'/></span> &nbsp;Retrieving Data</h5>
+    } 
+
     return (
       <div id="menu">
         <h2 className="text-center">Browse Our Menu</h2>
         <div className='menu-inner-container'>
           <MenuSelectTag handleChange={this.handleClick}/>
-          
           <MenuBtns handleClick={this.handleClick}/>
           <div className='menu-content'>
+            {fetchingData}
             <div className='list-plates'>
               <div className='left-col'>
                 <Plates notLastItem={true} sortedPlates={this.props.sortedPlates.filter(function(ele, index){return index % 2 === 0})}/>
@@ -44,7 +51,8 @@ class Menu extends Component {
 const mapStateToProps = state => ({
   plates: state.plates.plates,
   sortedPlates: state.plates.sortedPlates,
-  auth: state.plates.auth
+  auth: state.plates.auth,
+  loadingPlates: state.plates.loadingPlates
 })
 
 
