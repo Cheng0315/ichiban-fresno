@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { withRouter } from "react-router";
+import { connect } from 'react-redux';
 import '../css/plateComp.css'
 
 class PlateComp extends Component {  
@@ -9,35 +11,40 @@ class PlateComp extends Component {
     }
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-    const plateId = this.props.plateId
-    fetch(`/api/plates/${plateId}`)
-    .then(response =>  {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return {error: true}
-      }
-    })
-    .then(plateData => {
-      if (!!plateData.error) {
-        this.context.history.push('/')
-      } else {
-        this.setState({
-          plate: plateData
-        })
-      }
-    })
-    .catch(error => console.log(error))
+  plateIdIsNum = (plateId) => {
+    const result = plateId.match(/^\d+$/g);
+    return result;
   }
 
-  componentDidCatch(error, info) {
-    this.setState({
-      errorOccured: true
-    })
-    console.log('oh no')
+  componentDidMount() {
+    window.scrollTo(0, 0);
+
+    if (this.plateIdIsNum(this.props.plateId)) {
+      const plateId = this.props.plateId;
+
+      fetch(`/api/plates/${plateId}`)
+      .then(response =>  {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return {error: true}
+        }
+      })
+      .then(plateData => {
+        if (!!plateData.error) {
+          this.props.history.push('/')
+        } else {
+          this.setState({
+            plate: plateData
+          })
+        }
+      })
+      .catch(error => console.log(error))
+    } else {
+      this.props.history.push('/')
+    }
   }
+  
 
   render() {
     const hasContent = (content) => {
@@ -63,4 +70,5 @@ class PlateComp extends Component {
 
 
 
-export default PlateComp
+
+export default withRouter(PlateComp)

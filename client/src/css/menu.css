@@ -19,7 +19,7 @@
 .menu-nav button {
   transition: 0.3s;
   font-weight: bolder;
-  color: white;
+  color: #ffffff;
 }
 
 .menu-nav button:hover {

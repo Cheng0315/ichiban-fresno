@@ -21,7 +21,7 @@ class PlatesController < ApiController
   end
 
   def show
-    @plate = Plate.find(params[:id].to_i)
+    @plate = Plate.find(params[:id])
     render json: @plate
   end
 
