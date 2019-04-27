@@ -33,7 +33,7 @@ class EditPlateForm extends Component {
   handleShow(e) {
     e.preventDefault();
     
-    let plate = this.props.plates.find(plate => plate.id == this.props.plateId)
+    let plate = this.props.plates.find(plate => plate.id === this.props.plateId)
 
     this.setState({ 
       show: true,
@@ -46,7 +46,7 @@ class EditPlateForm extends Component {
   }
 
   findCategoryId = () => {
-    return this.props.plates.find(plate => plate.id == this.props.plateId).category_id;
+    return this.props.plates.find(plate => plate.id === this.props.plateId).category_id;
   }
 
   handlePlateDelete = () => {

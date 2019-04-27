@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -73,4 +74,4 @@ const mapStateToProps = state => ({
   auth: state.plates.auth
 })
 
-export default connect(mapStateToProps, {updateAuth})(NavBar)
+export default withRouter(connect(mapStateToProps, {updateAuth})(NavBar))

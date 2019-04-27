@@ -18,13 +18,13 @@ class App extends Component {
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/admin' render={() => (
             this.props.auth ? (
-              <Redirect to="/"/>
+              <Redirect to="/" />
             ) : (
               <SignIn/>
             )
           )}/>
           <Route exact path='/dishes/:id' component={ShowPagePlate}/>
-          <Route component={HomePage}/>
+          <Redirect to='/' />
         </Switch>
       </Router>
     )

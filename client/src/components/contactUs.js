@@ -23,9 +23,6 @@ const ContactUs = () => {
               <p>4863 E Butler Ave,</p>
               <p>Fresno, CA 93727</p>
             </div>
-            <div className='restaurant-sc-md'>
-
-            </div>
           </div>
         </div>
 

@@ -19,7 +19,7 @@
 .menu-nav button {
   transition: 0.3s;
   font-weight: bolder;
-  color: #ffffff;
+  color: #f3f2f2;
 }
 
 .menu-nav button:hover {
@@ -33,14 +33,14 @@
 }
 
 .menu-nav .btn{
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 .menu-nav svg{
   padding-bottom: -20px;
   margin-top: 11px;
-  color: white;
+  color: #f3f2f2;
 }
 
 

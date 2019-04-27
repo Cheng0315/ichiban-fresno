@@ -14,7 +14,7 @@ const updatePlates = (fd, closeModal, categoryId) => dispatch => {
     dispatch({
       type: 'UPDATE_PLATES',
       payload: platesData, 
-      updatedPlateCategoryId: categoryId
+      updatedPlateCategoryId: parseInt(categoryId)
     })
   })
   .catch(error => console.log(error))

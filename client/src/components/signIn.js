@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import updateAuth from '../actions/updateAuth'
@@ -46,23 +47,21 @@ class SignIn extends Component {
     return ( 
       <React.Fragment>
         <div className='sign-in container'>
-          <div className='sign-in-content'>
-            <div className='sign-in-form'>
-              <a href='/'><h1>ICHIBAN</h1></a>
-              <h4>Sign in to Ichiban</h4>
-              <Form onSubmit={this.handleSubmit}>
-                <div className='invalid-login'>{this.state.invalidLoginMsg}</div>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Email" name='email' ref='email' required/>
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Control type="password" placeholder="Password" name='password' ref='password' required/>
-                </Form.Group>
-                <Button variant="primary" className='btn-block' type="submit">
-                  Sign In
-                </Button>
-              </Form>
-            </div>
+          <div className='sign-in-form'>
+            <a href='/'><h1>ICHIBAN</h1></a>
+            <h4>Sign in to Ichiban</h4>
+            <Form onSubmit={this.handleSubmit}>
+              <div className='invalid-login'>{this.state.invalidLoginMsg}</div>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Email" name='email' ref='email' required/>
+              </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Control type="password" placeholder="Password" name='password' ref='password' required/>
+              </Form.Group>
+              <Button variant="primary" className='btn-block' type="submit">
+                Sign In
+              </Button>
+            </Form>
           </div>
         </div>
         <div className="text-center">Copyright &copy; {year} Ichiban, Inc. All Rights Reserved </div>
@@ -71,4 +70,4 @@ class SignIn extends Component {
   }
 }
 
-export default connect(null, {updateAuth})(SignIn)
+export default withRouter(connect(null, {updateAuth})(SignIn))
