@@ -3,6 +3,7 @@ import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import UpdateAdmin from './updateAdmin'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../css/navBar.css';
@@ -33,7 +34,10 @@ class NavBar extends Component {
     let navBar = '';
 
     if (this.props.auth) {
-      logOut = <Nav.Link className='nav-link' href="/" onClick={this.handleClick}>Log Out</Nav.Link>;
+      logOut =  <React.Fragment>
+                  <UpdateAdmin/>
+                  <Nav.Link className='nav-link' href="/" onClick={this.handleClick}>Log Out</Nav.Link>
+                </React.Fragment>
     } 
 
     if (window.location.pathname === '/') {
