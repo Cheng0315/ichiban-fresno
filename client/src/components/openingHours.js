@@ -11,7 +11,6 @@ const OpeningHours = () => {
           <div className='opening-hrs-boxes'>
             <h5>MONDAY-FRIDAY</h5>
             <div>10:30 AM - 8:30 PM</div>
-            <div>(Kitchen closes at 8:00 PM)</div>
           </div>
         </div>
 
@@ -19,7 +18,6 @@ const OpeningHours = () => {
           <div className='opening-hrs-boxes'>
             <h5>SATURDAY</h5>
             <div>12:00 PM - 8:30 PM</div>
-            <div>(Kitchen closes at 8:00 PM)</div>
           </div>
         </div>
 

@@ -1,24 +1,26 @@
-# README
+# Ichiban-Fresno
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ichiban-Fresno is a restaurant web application. The application uses Rails API on the back end and React on the front end. 
 
-Things you may want to cover:
+When using the application, administrators or store owner can view information about the restaurant and create, update or delete dishes while users can only view information about the restaurant.
 
-* Ruby version
+To login in as administrators, add '/admin' to the end of the application url then press enter. Then use the email 'admin@admin.com' and password 'admin' to login.
 
-* System dependencies
+# Usage 
 
-* Configuration
+This application uses PostgreSQL as the database. To fully test out the functions of this application, please make sure you have PostgreSQL install before running the application.
 
-* Database creation
+To use the application, clone this repository, run bundle install, rails active_storage:install, rails db:create, rails db:migrate, rails db:seed, then foreman start.
 
-* Database initialization
+# Contributing Bugfixes or Features
 
-* How to run the test suite
+For submitting something back,
 
-* Services (job queues, cache servers, search engines, etc.)
+- Fork this repository
+- Create a local development branch for the bugfix
+- Commit a change, and push your local branch to your github fork
+- Send me a pull request for your changes to be included
 
-* Deployment instructions
+# LICENSE
 
-* ...
+Ichiban-Fresno is licensed under the MIT license (https://opensource.org/licenses/MIT).
