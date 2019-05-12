@@ -26,7 +26,7 @@ class Menu extends Component {
     } 
 
     return (
-      <div id="menu">
+      <section id="menu">
         <h2 className="text-center">Browse Our Menu</h2>
         <div className='menu-inner-container'>
           <MenuSelectTag handleChange={this.handleClick}/>
@@ -43,7 +43,7 @@ class Menu extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 }

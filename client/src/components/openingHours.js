@@ -4,7 +4,7 @@ import '../css/openingHours.css';
 
 const OpeningHours = () => {
   return (
-    <div id="opening-hours">
+    <section id="opening-hours">
       <h2 className='text-center'>Opening Hours</h2>
       <Row>
         <div className='text-center col-lg-4 col-md-12'>
@@ -28,7 +28,7 @@ const OpeningHours = () => {
           </div>
         </div>
       </Row>
-    </div>
+    </section>
   )
 }
 

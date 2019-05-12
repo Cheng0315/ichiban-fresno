@@ -13,13 +13,13 @@ const HomePage = () => {
       <header className="header">
         <NavBar/>
       </header>
-      <section className="container">
+      <main className="container">
         <CarouselComponent/>
         <Menu/>
         <OpeningHours/>
         <AboutUs/>
         <ContactUs/>
-      </section>
+      </main>
       <footer id='footer'>
         <Footer/>
       </footer>

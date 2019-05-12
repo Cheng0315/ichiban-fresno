@@ -1,6 +1,7 @@
 .list-plates img{
   width: 110px;
   height: 110px;
+  object-fit: cover;
   background-size: cover;
   display: block;
   border-style: solid;
@@ -256,7 +257,7 @@
 
 @media (min-width: 992px) and (max-width: 1199px){
   .plate-img {
-    flex: 0 0 32%; 
+    flex: 0 0 34%; 
   }
   
   .plate-info{
@@ -305,7 +306,7 @@
 
 @media (min-width: 1200px) {
   .plate-img {
-    flex: 0 0 26%; 
+    flex: 0 0 28%; 
   }
   
   .plate-info{

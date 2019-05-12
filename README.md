@@ -2,15 +2,15 @@
 
 Ichiban-Fresno is a restaurant web application. The application uses Rails API on the back end and React on the front end. 
 
-When using the application, administrators or store owner can view information about the restaurant and create, update or delete dishes while users can only view information about the restaurant.
+When using the application, administrators or store owner can view information about the restaurant and create, update or delete dishes while users can view the dishes as well as information about the restaurant.
 
-To login in as administrators, add '/admin' to the end of the application url then press enter. Then use the email 'admin@admin.com' and password 'admin' to login.
+To login in as administrators, add '/admin' to the end of the application url and press enter. Then use the email 'admin@admin.com' and password 'admin' to login.
 
 # Usage 
 
 This application uses PostgreSQL as the database. To fully test out the functions of this application, please make sure you have PostgreSQL install before running the application.
 
-To use the application, clone this repository, run bundle install, rails active_storage:install, rails db:create, rails db:migrate, rails db:seed, then foreman start.
+To install the application, clone this repository, run bundle install, rails active_storage:install, rails db:create, rails db:migrate, rails db:seed, then foreman start.
 
 # Contributing Bugfixes or Features
 

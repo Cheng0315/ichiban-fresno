@@ -16,12 +16,12 @@ class ShowPagePlate extends Component {
         <header className="header">
           <NavBar/>
         </header>
-        <section className="container">
+        <main className="container">
           <PlateComp plateId={plateId}/>
           <OpeningHours/>
           <AboutUs/>
           <ContactUs/>
-        </section>
+        </main>
         <footer id='footer'>
           <Footer/>
         </footer>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ContactUs = () => {
   return (
-    <div id="contact-us">
+    <section id="contact-us">
       <h2 className="text-center">Contact Us</h2>
       <div className='row restaurant-info'>
         <div className='col-lg-6 col-md-12 col-sm-12'>
@@ -33,7 +33,7 @@ const ContactUs = () => {
           </iframe>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -29,6 +29,7 @@ class NewPlateForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const fd = new FormData();
+    //const { price, name, } = e.target.elements
     const name = e.target.elements.name.value; 
     const price= e.target.elements.price.value;
     const description= e.target.description.value;
@@ -43,7 +44,6 @@ class NewPlateForm extends Component {
     fd.append('plate[out]', outside);
     fd.append('plate[category_id]', category_id);
     fd.append('plate[description]', description);
-
     this.props.createNewPlate(fd, this.handleClose);
   }
 

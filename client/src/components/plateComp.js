@@ -51,7 +51,7 @@ class PlateComp extends Component {
     }
     
     return (
-      <div className='plate-comp  row'>
+      <section className='plate-comp  row'>
         <div className='col-lg-6 col-md-6'>
           <img className='img-fluid' src={this.state.plate.image_url} alt={this.state.plate.name}/>
         </div>
@@ -62,12 +62,9 @@ class PlateComp extends Component {
           {hasContent(this.state.plate.in) ? (<div>In: {this.state.plate.in}</div>) : ('')}
           {hasContent(this.state.plate.out) ? (<div>Out: {this.state.plate.out}</div>) : ('')}
         </div>
-      </div>
+      </section>
     )
   }
 }
-
-
-
 
 export default withRouter(PlateComp)
