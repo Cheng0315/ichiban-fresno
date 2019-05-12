@@ -4,6 +4,8 @@
 }
 
 .plate-comp img {
+  width: 100%;
+  height: 100%;
   -webkit-box-shadow: 0 0 10px rgb(175, 173, 173);
   box-shadow: 0 0 3px rgb(230, 216, 216);
 }

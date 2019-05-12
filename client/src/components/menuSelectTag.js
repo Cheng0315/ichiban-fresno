@@ -6,7 +6,7 @@ import '../css/plates.css';
 class MenuSelectTag extends Component{  
 
   render() {
-    let newPlateForm = ''
+    let newPlateForm = '';
 
     if (this.props.auth) {
       newPlateForm = <NewPlateForm/>

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import updateAuth from '../actions/updateAuth'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import UpdateAdmin from './updateAdmin'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import UpdateAdmin from './updateAdmin';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../css/navBar.css';
@@ -32,8 +32,10 @@ class NavBar extends Component {
   render() {
     let logOut = '';
     let navBar = '';
+    let adminLogin = <Nav.Link className='nav-link admin-login-link' href="/admin">Admin Login</Nav.Link>;
 
     if (this.props.auth) {
+      adminLogin = '';
       logOut =  <React.Fragment>
                   <UpdateAdmin/>
                   <Nav.Link className='nav-link' href="/" onClick={this.handleClick}>Log Out</Nav.Link>
@@ -66,6 +68,7 @@ class NavBar extends Component {
             <Nav.Link className='nav-link' href="/">Home</Nav.Link>
             {navBar}
             {logOut}
+            {adminLogin}
           </Nav>
         </Navbar.Collapse>
         </div>

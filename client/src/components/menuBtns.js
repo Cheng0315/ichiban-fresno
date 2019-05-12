@@ -8,7 +8,7 @@ import '../css/menu.css';
 class MenuBtns extends Component {
 
   render() {
-  let newPlateForm = ''
+  let newPlateForm = '';
 
   if (this.props.auth) {
     newPlateForm = <NewPlateForm/>

@@ -51,6 +51,7 @@ class SignIn extends Component {
             <a href='/'><h1>ICHIBAN</h1></a>
             <h4>Sign in to Ichiban</h4>
             <Form onSubmit={this.handleSubmit}>
+              <div>Email: admin@admin.com</div> <div className='admin-passsword'>Password: admin</div>
               <div className='invalid-login'>{this.state.invalidLoginMsg}</div>
               <Form.Group controlId="formBasicEmail">
                 <Form.Control type="email" placeholder="Email" name='email' ref='email' required/>
