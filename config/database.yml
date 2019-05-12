@@ -86,7 +86,6 @@ test:
 #
 production:
   <<: *default
-  host: localhost
   database: ichiban_fresno_production1
   username: <%= ENV['ICHIBAN_USERNAME'] %>
   password: <%= ENV['ICHIBAN_PASSWORD'] %>
