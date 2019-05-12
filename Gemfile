@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'active_model_serializers'
 gem 'pry'
+gem "google-cloud-storage", "~> 1.8", require: false
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
