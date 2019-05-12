@@ -18,6 +18,7 @@ class ShowPagePlate extends Component {
         </header>
         <main className="container">
           <PlateComp plateId={plateId}/>
+          <hr/>
           <OpeningHours/>
           <AboutUs/>
           <ContactUs/>

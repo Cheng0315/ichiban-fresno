@@ -1,3 +1,20 @@
 #about-us {
   margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us-p {
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-p p{
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .about-us-p p{
+    width: 580px;
+  }
 }

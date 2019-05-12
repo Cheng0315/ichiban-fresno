@@ -51,11 +51,11 @@ class PlateComp extends Component {
     }
     
     return (
-      <section className='plate-comp  row'>
-        <div className='col-lg-6 col-md-6'>
+      <section className='plate-comp row'>
+        <div className='col-lg-5 col-md-5'>
           <img className='img-fluid' src={this.state.plate.image_url} alt={this.state.plate.name}/>
         </div>
-        <div className='col-lg-6 col-md-6'>
+        <div className='col-lg-7 col-md-7'>
           <h6>{this.state.plate.name}</h6>
           <div>${this.state.plate.price}</div>
           {hasContent(this.state.plate.description) ? (<h6>{this.state.plate.description}</h6>) : ('')}

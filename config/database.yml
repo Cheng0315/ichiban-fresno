@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   host: localhost
-  database: ichiban-fresno1_development
+  database: ichiban_fresno_development1
   username: <%= ENV['ICHIBAN_USERNAME'] %>
   password: <%= ENV['ICHIBAN_PASSWORD'] %>
 
@@ -61,7 +61,7 @@ development:
 test:
   <<: *default
   host: localhost
-  database: ichiban-fresno1_test
+  database: ichiban_fresno_test1
   username: <%= ENV['ICHIBAN_USERNAME'] %>
   password: <%= ENV['ICHIBAN_PASSWORD'] %>
 
@@ -87,6 +87,6 @@ test:
 production:
   <<: *default
   host: localhost
-  database: ichiban-fresno1_production
+  database: ichiban_fresno_production1
   username: <%= ENV['ICHIBAN_USERNAME'] %>
   password: <%= ENV['ICHIBAN_PASSWORD'] %>
