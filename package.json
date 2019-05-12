@@ -1,0 +1,25 @@
+{
+  "name": "ichiban-fresno",
+  "version": "1.0.0",
+  "description": "restaurant app",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cheng0315/ichiban-fresno.git"
+  },
+  "author": "cheng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cheng0315/ichiban-fresno/issues"
+  },
+  "homepage": "https://github.com/Cheng0315/ichiban-fresno#readme"
+}
