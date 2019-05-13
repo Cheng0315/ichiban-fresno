@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   delete '/api/delete_plates' => 'plates#destroy'
   get '/api/plates/:id' => 'plates#show'
   post '/api/admin/update_info' => 'admin#update'
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
 end
