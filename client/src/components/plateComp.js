@@ -58,7 +58,7 @@ class PlateComp extends Component {
         <div className='col-lg-7 col-md-7'>
           <h6>{this.state.plate.name}</h6>
           <div>${this.state.plate.price}</div>
-          {hasContent(this.state.plate.description) ? (<h6>{this.state.plate.description}</h6>) : ('')}
+          {hasContent(this.state.plate.description) ? (<div>{this.state.plate.description}</div>) : ('')}
           {hasContent(this.state.plate.in) ? (<div>In: {this.state.plate.in}</div>) : ('')}
           {hasContent(this.state.plate.out) ? (<div>Out: {this.state.plate.out}</div>) : ('')}
         </div>

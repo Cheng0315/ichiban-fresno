@@ -136,6 +136,10 @@
     display: flex; 
     flex-direction: column !important;
   }
+  
+  .fa-pencil-alt {
+    display: none;
+  }
 
   .list-plates img {
     margin-bottom: 17px;
@@ -185,6 +189,12 @@
 
   .modal-dialog {
     padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sm-sc-edit-plates {
+    display: none;
   }
 }
 

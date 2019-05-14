@@ -41,6 +41,23 @@ class SignIn extends Component {
     .catch(error => console.log(error))
   }
 
+  handleDemoLogin = (e) => {
+    e.preventDefault()
+    const inputs = {email: 'admin@admin.com', password: 'admin'}
+    fetch('/api/sign_in', {
+      method: 'post',
+      body: JSON.stringify(inputs),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      this.validateToken(response.token)
+    })
+    .catch(error => console.log(error))
+  }
+
   render(){
     const year = new Date().getFullYear()
 
@@ -49,20 +66,22 @@ class SignIn extends Component {
         <div className='sign-in container'>
           <div className='sign-in-form'>
             <a href='/'><h1>ICHIBAN</h1></a>
-            <h4>Sign in to Ichiban</h4>
+            <h4>Log in to Ichiban</h4>
             <Form onSubmit={this.handleSubmit}>
-              <div>Email: admin@admin.com</div> <div className='admin-passsword'>Password: admin</div>
               <div className='invalid-login'>{this.state.invalidLoginMsg}</div>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email" name='email' ref='email' required/>
+                <Form.Control type="email" placeholder="admin@admin.com" name='email' ref='email' required/>
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" name='password' ref='password' required/>
+                <Form.Control type="password" placeholder="admin" name='password' ref='password' required/>
               </Form.Group>
               <Button variant="primary" className='btn-block' type="submit">
-                Sign In
+                Log In
               </Button>
             </Form>
+            <Button variant="success" className='btn-block demo-log-in' onClick={this.handleDemoLogin}>
+              Demo Log In
+            </Button>
           </div>
         </div>
         <div className="text-center">Copyright &copy; {year} Ichiban, Inc. All Rights Reserved </div>
