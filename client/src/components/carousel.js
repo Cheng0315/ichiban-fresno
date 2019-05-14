@@ -21,7 +21,7 @@ const CarouselComponent = () => {
           
           <Carousel.Caption>
             <h1>Welcome to Ichiban Restaurant</h1>
-            <p>Welcome to Ichiban Restaurant Welcome to Ichiban Restaurant</p>
+            <p>Quality Japanese foods that surpasses all expectations</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -34,13 +34,13 @@ const CarouselComponent = () => {
 
           <img
             className="imgHeight carousel-img-r"
-            src="https://mms17-makemysushi.netdna-ssl.com/wp-content/uploads/2017/05/DSC04685-01.jpeg"
+            src="https://i1.wp.com/rnrsushi.com/wp-content/uploads/2018/02/Rock-N-Roll-Sushi-34.jpg?fit=959%2C640&ssl=1"
             alt="First slide"
           />
 
           <Carousel.Caption>
-          <h1>Welcome to Ichiban Restaurant</h1>
-            <p>Welcome to Ichiban Restaurant Welcome to Ichiban Restaurant</p>
+          <h1>Award Winning Restaurant</h1>
+            <p>Voted the best Japanese Cuisine in Fresno</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
