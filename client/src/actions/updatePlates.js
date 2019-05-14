@@ -1,5 +1,5 @@
 const updatePlates = (fd, closeModal, categoryId) => dispatch => {
-
+  dispatch({type: 'START_ADDING_PLATES'});
   fetch('/api/update_plates', {
     method: 'PATCH',
     body: fd,

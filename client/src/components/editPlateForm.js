@@ -83,8 +83,14 @@ class EditPlateForm extends Component {
 
   render() {
     let editIcon = '';
+    let loading;
+
     if (this.props.auth) {
       editIcon = <a href='/' onClick={this.handleShow}><h6><span className='edit-plates'><FontAwesomeIcon icon="pencil-alt"/></span><span className='sm-sc-edit-plates'>Edit</span></h6></a>
+    }
+
+    if (!!this.props.loadingPlates) {
+      loading = <span ><FontAwesomeIcon icon="spinner" className='fa fa-spinner fa-spin'/></span>
     }
 
     return (
@@ -123,7 +129,7 @@ class EditPlateForm extends Component {
             </select>
             <input type="file" className='upload-img' onChange={this.props.uploadImg} required/>
             <Button variant="primary" className='btn-block' type="submit">
-              Update
+            {loading} &nbsp;Update
             </Button>
             <Button variant="danger" className='btn-block' onClick={this.handlePlateDelete}>
               Delete This Dish
@@ -138,7 +144,8 @@ class EditPlateForm extends Component {
 const mapStateToProps = state => ({
   plates: state.plates.plates,
   auth: state.plates.auth,
-  selectedFile: state.plates.selectedFile
+  selectedFile: state.plates.selectedFile,
+  loadingPlates: state.plates.loadingPlates
 })
 
 export default connect(mapStateToProps, {uploadImg, updatePlates, deletePlates})(EditPlateForm)

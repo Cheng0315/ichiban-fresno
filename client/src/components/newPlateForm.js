@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class NewPlateForm extends Component {
   constructor(props, context) {
@@ -48,6 +49,12 @@ class NewPlateForm extends Component {
   }
 
   render() {
+    let loading;
+
+    if (!!this.props.loadingPlates) {
+      loading = <span ><FontAwesomeIcon icon="spinner" className='fa fa-spinner fa-spin'/></span>
+    }
+
     return (
       <div className='add-new-dish'>
         <Button variant="primary" onClick={this.handleShow}>
@@ -86,7 +93,7 @@ class NewPlateForm extends Component {
             </select>
             <input type="file" className='upload-img' onChange={this.props.uploadImg} required/>
             <Button variant="primary" className='btn-block' type="submit">
-              Create Dish
+              {loading} &nbsp;Create Dish
             </Button>
         </Form>
         </Modal>
@@ -96,7 +103,8 @@ class NewPlateForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  selectedFile: state.plates.selectedFile
+  selectedFile: state.plates.selectedFile,
+  loadingPlates: state.plates.loadingPlates
 })
 
 export default connect(mapStateToProps, {createNewPlate, uploadImg})(NewPlateForm)

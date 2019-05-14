@@ -1,5 +1,5 @@
 const createNewPlate = (fd, closeModal) => dispatch => {
-  console.log('C')
+  dispatch({type: 'START_ADDING_PLATES'});
   fetch('/api/create_plate', {
     method: 'post',
     body: fd,
@@ -11,7 +11,6 @@ const createNewPlate = (fd, closeModal) => dispatch => {
   .then(response => response.json())
   .then(platesData => {
     closeModal();
-    console.log('D')
     dispatch({
       type: 'FETCH_NEW_PLATES',
       payload: platesData,
