@@ -38,8 +38,9 @@ class UpdateAdmin extends Component {
     })
   }
 
-  handleFakeSubmit = () => {
-    alert('Nice try! Teehee!');
+  handleAlert = (e) => {
+    e.preventDefault()
+    alert("This feature is used for changing the email and password of this account. Because changing the email or password will prevent others from logging in, this feature was turned off.")
   }
 
   handleSubmit = (e) => {
@@ -71,9 +72,9 @@ class UpdateAdmin extends Component {
 
     return (
       <React.Fragment>
-        <a href='/' onClick={this.handleShow} className='nav-link disabled'>Update My Info</a>
+        <a href='/' onClick={this.handleAlert} className='nav-link'>Update My Info</a>
         <Modal show={this.state.show} onHide={this.handleClose} className='edit-plate-modal' centered>
-        <Form onSubmit={this.handleFakeSubmit} className='container'>
+        <Form onSubmit={this.handleSubmit} className='container'>
             <h1>Update My Information</h1>
             <Form.Group controlId="plate-name">
               <Form.Control type="text" value={this.state.email} name='email' placeholder="email" ref='email' onChange={this.handleInputChange} required/>

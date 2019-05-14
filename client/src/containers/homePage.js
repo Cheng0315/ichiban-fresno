@@ -6,7 +6,6 @@ import AboutUs from '../components/aboutUs';
 import OpeningHours from '../components/openingHours';
 import ContactUs from '../components/contactUs';
 import Footer from '../components/footer';
-import Note from '../components/note'
 
 const HomePage = () => {
   
@@ -15,7 +14,6 @@ const HomePage = () => {
       <header className="header">
         <NavBar/>
       </header>
-        <Note/>
       <main className="container">
         <CarouselComponent/>
         <Menu/>

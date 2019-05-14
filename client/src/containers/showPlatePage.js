@@ -5,7 +5,6 @@ import AboutUs from '../components/aboutUs';
 import OpeningHours from '../components/openingHours';
 import ContactUs from '../components/contactUs';
 import Footer from '../components/footer';
-import Note from '../components/note'
 
 class ShowPagePlate extends Component {
 
@@ -17,7 +16,6 @@ class ShowPagePlate extends Component {
         <header className="header">
           <NavBar/>
         </header>
-        <Note/>
         <main className="container">
           <PlateComp plateId={plateId}/>
           <hr/>
