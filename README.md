@@ -1,18 +1,18 @@
 # Ichiban-Fresno
 
-Ichiban-Fresno is a restaurant web application. The application uses Rails API on the back end and React on the front end. 
+Ichiban-Fresno is a restaurant web application. The application uses React/Redux on the front end and Rails API on the back end. 
+
+To see the code for the front end, click [here](https://github.com/Cheng0315/ichiban-fresno/tree/master/client)
 
 When using the application, administrators or store owner can view information about the restaurant and create, update or delete dishes while users can view the dishes as well as information about the restaurant.
 
-To login in as administrators, add '/admin' to the end of the application url and press enter. Then use the email 'admin@admin.com' and password 'admin' to login.
-
-# Usage 
+## Installation
 
 This application uses PostgreSQL as the database. To fully test out the functions of this application, please make sure you have PostgreSQL install before running the application.
 
-To install the application, clone this repository, run bundle install, rails active_storage:install, rails db:create, rails db:migrate, rails db:seed, then foreman start.
+To install this application, clone this repository, cd into the client folder, run npm install, cd back to the root of the repository, run bundle install, rails active_storage:install, rails db:create, rails db:migrate, rails db:seed, then foreman start.
 
-# Contributing Bugfixes or Features
+## Contributing Bugfixes or Features
 
 For submitting something back,
 
@@ -21,6 +21,6 @@ For submitting something back,
 - Commit a change, and push your local branch to your github fork
 - Send me a pull request for your changes to be included
 
-# LICENSE
+## LICENSE
 
 Ichiban-Fresno is licensed under the MIT license (https://opensource.org/licenses/MIT).
